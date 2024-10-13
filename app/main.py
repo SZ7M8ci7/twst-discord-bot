@@ -148,7 +148,8 @@ async def on_message(message):
                                 await thread.send(f"認識精度は{round(accuracy*100, 1)}％ぐらい")
                                 for output in output_messages:
                                     await thread.send(output)
-
+            # 1ファイル目で終了
+            break
 
 server_thread()
 # Botを実行
