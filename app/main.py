@@ -145,7 +145,7 @@ async def on_message(message):
                                     for output in output_messages:
                                         await thread.send(output)
                                     # すべてのメッセージを送信後にスレッドをアーカイブ（クローズ）
-                                    await thread.archive()
+                                    await thread.edit(archived=True)
                 # 1ファイル目で終了
                 break
         except:
