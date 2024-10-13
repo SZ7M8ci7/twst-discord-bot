@@ -62,11 +62,6 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 実行中のスクリプトのディレクトリを取得
-    current_path = os.path.dirname(os.path.abspath(__file__))
-
-    # パスを表示
-    await message.channel.send("Current path:" + current_path)
     if message.attachments:
         for attachment in message.attachments:
             # メッセージの画像を取得
@@ -148,6 +143,8 @@ async def on_message(message):
                                 await thread.send(f"認識精度は{round(accuracy*100, 1)}％ぐらい")
                                 for output in output_messages:
                                     await thread.send(output)
+                                # すべてのメッセージを送信後にスレッドをアーカイブ（クローズ）
+                                await thread.archive()
             # 1ファイル目で終了
             break
 
