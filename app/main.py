@@ -14,6 +14,8 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_message(message):
+    print('aa')
+    print(message)
     if message.author == client.user:
         return
 
