@@ -145,7 +145,7 @@ async def on_message(message):
                             if output_messages:
                                 # スレッドを作成して返信
                                 thread = await message.create_thread(name="画像認識の結果だよ！")
-                                thread.send(f"認識精度は{round(accuracy*100, 1)}％ぐらい")
+                                await thread.send(f"認識精度は{round(accuracy*100, 1)}％ぐらい")
                                 for output in output_messages:
                                     await thread.send(output)
 
