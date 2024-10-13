@@ -31,7 +31,7 @@ def imread_unicode_from_bytes(file_bytes):
 
 
 # テンプレートマッチングの関数
-def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=1.2, step=0.1, method=cv2.TM_CCOEFF_NORMED):
+async def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=1.2, step=0.1, method=cv2.TM_CCOEFF_NORMED):
     best_match = None
     best_value = -1
     h, w = template.shape[:2]
@@ -41,7 +41,7 @@ def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=1.2,
     while scale <= max_scale:
         # テンプレート画像をリサイズ
         resized_template = cv2.resize(template, (int(w * scale), int(h * scale)))
-        result = cv2.matchTemplate(image, resized_template, method)
+        result = await cv2.matchTemplate(image, resized_template, method)
 
         # テンプレートマッチングの結果から最小値と最大値を取得
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
@@ -99,7 +99,7 @@ async def on_message(message):
                                         continue
 
                                     # 各テンプレートでのマルチスケールテンプレートマッチングの実行
-                                    best_match, best_value = multi_scale_template_matching(image, template)
+                                    best_match, best_value = await multi_scale_template_matching(image, template)
 
                                     # 最適なスケールとテンプレートを保持
                                     if best_value > best_match_value_overall:
