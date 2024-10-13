@@ -66,7 +66,7 @@ async def on_message(message):
     current_path = os.path.dirname(os.path.abspath(__file__))
 
     # パスを表示
-    message.channel.send("Current path:" + current_path)
+    await message.channel.send("Current path:" + current_path)
     if message.attachments:
         for attachment in message.attachments:
             # メッセージの画像を取得
