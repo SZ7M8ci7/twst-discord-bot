@@ -66,7 +66,7 @@ async def on_message(message):
     current_path = os.path.dirname(os.path.abspath(__file__))
 
     # パスを表示
-    message.channel.send("Current path:", current_path)
+    message.channel.send("Current path:" + current_path)
     if message.attachments:
         for attachment in message.attachments:
             # メッセージの画像を取得
@@ -134,15 +134,18 @@ async def on_message(message):
 
                             # 結果の出力（拡張子を除いたテンプレート画像のファイル名とマッチング精度）
                             output_messages = []
+                            accuracy = 1
                             for match in all_matches:
                                 template_file, max_loc, max_val = match
                                 file_name = os.path.splitext(os.path.basename(template_file))[0]
                                 if max_val > 0.9:
+                                    accuracy *= max_val
                                     output_messages.append(f"{file_name}")
 
                             if output_messages:
                                 # スレッドを作成して返信
-                                thread = await message.create_thread(name="Matching Results")
+                                thread = await message.create_thread(name="画像認識の結果だよ！")
+                                thread.send(f"認識精度は{round(accuracy*100, 1)}％ぐらい")
                                 for output in output_messages:
                                     await thread.send(output)
 
