@@ -119,7 +119,7 @@ async def on_message(message):
                                     resized_template = cv2.resize(template, (int(w * best_scale_overall), int(h * best_scale_overall)))
 
                                     # 再度マッチングを行い、座標を取得
-                                    result = cv2.matchTemplate(image, resized_template, cv2.TM_CCOEFF_NORMED)
+                                    result = await cv2.matchTemplate(image, resized_template, cv2.TM_CCOEFF_NORMED)
                                     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 
                                     # マッチした結果をリストに追加
