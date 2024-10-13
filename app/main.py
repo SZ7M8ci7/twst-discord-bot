@@ -59,6 +59,11 @@ def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=2.0,
 # メッセージに画像が投稿されたときの処理
 @client.event
 async def on_message(message):
+    # 実行中のスクリプトのディレクトリを取得
+    current_path = os.path.dirname(os.path.abspath(__file__))
+
+    # パスを表示
+    message.channel.send("Current path:", current_path)
     if message.attachments:
         for attachment in message.attachments:
             # メッセージの画像を取得

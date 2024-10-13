@@ -3,5 +3,5 @@ python-dotenv==1.0.1
 uvicorn==0.29.0
 fastapi==0.110.1
 opencv-python==4.10.0.84
-numpy==1.26.54
+numpy==2.1.2
 aiohttp==3.10.10
