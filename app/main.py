@@ -31,7 +31,7 @@ def imread_unicode_from_bytes(file_bytes):
 
 
 # テンプレートマッチングの関数
-def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=1.5, step=0.1, method=cv2.TM_CCOEFF_NORMED):
+def multi_scale_template_matching(image, template, min_scale=0.5, max_scale=1.2, step=0.1, method=cv2.TM_CCOEFF_NORMED):
     best_match = None
     best_value = -1
     h, w = template.shape[:2]
