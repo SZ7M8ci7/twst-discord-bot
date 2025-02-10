@@ -70,6 +70,13 @@ try:
         filtered_messages = await check_not_finished(CHANNEL_ID:= 1290587266695036958)
         # 結果をユーザーに返信
         count = 0
+        tokyo_tz = timezone('Asia/Tokyo')
+        now = datetime.datetime.now(tokyo_tz)
+        three_days_ago = now - datetime.timedelta(days=3)
+        recent_filtered_messages = [
+            msg for msg in filtered_messages 
+            if msg.created_at.astimezone(tokyo_tz) < three_days_ago
+        ]
         if filtered_messages:
             response = "まだ入力されてない画像を最大10件表示するよ！\n"
             for msg, new_content in filtered_messages:
@@ -79,7 +86,7 @@ try:
                     break
         else:
             response = "未入力の画像はないよ！"
-
+        response += str(recent_filtered_messages)
 
         await interaction.response.send_message(response,ephemeral=True)
     @client.event
