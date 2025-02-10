@@ -75,7 +75,7 @@ try:
         three_days_ago = now - datetime.timedelta(days=3)
         recent_filtered_messages = [
             msg for msg in filtered_messages 
-            if msg.created_at.astimezone(tokyo_tz) < three_days_ago
+            if msg[0].created_at.astimezone(tokyo_tz) < three_days_ago
         ]
         if filtered_messages:
             response = "まだ入力されてない画像を最大10件表示するよ！\n"
