@@ -106,7 +106,6 @@ try:
         now = datetime.datetime.now(tokyo_tz)
         if now.weekday() == 5 and now.hour == 11:
             filtered_messages = await check_not_finished(CHANNEL_ID:= 1290587266695036958)
-            print(filtered_messages)
             if len(filtered_messages):
                 channel = client.get_channel(CHANNEL_ID)
                 await channel.send(f'未入力のスクショが{len(filtered_messages)}件あるよ！')
