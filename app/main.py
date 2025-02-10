@@ -87,7 +87,6 @@ try:
                     break
         else:
             response = "未入力の画像はないよ！"
-        response += str(recent_filtered_messages)
 
         await interaction.response.send_message(response,ephemeral=True)
     @client.event
