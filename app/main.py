@@ -39,7 +39,9 @@ async def check_not_finished(CHANNEL_ID):
     # 画像がついているメッセージで「done」リアクションがないものをフィルタリング
     filtered_messages = []
     for message in messages:
-        print(message.created_at, message)
+        
+        tokyo_tz = timezone('Asia/Tokyo')
+        print(message.created_at.astimezone(tokyo_tz), message)
         # メッセージに添付ファイルがあるかどうか確認
         if message.attachments and 3 <= len(message.attachments) <= 4:
             has_image = any(attachment.filename.lower().endswith(('png', 'jpg', 'jpeg', 'gif')) for attachment in message.attachments)
@@ -78,6 +80,7 @@ try:
             msg for msg in filtered_messages 
             if msg[0].created_at.astimezone(tokyo_tz) < three_days_ago
         ]
+        print(three_days_ago)
         if filtered_messages:
             response = "まだ入力されてない画像を最大10件表示するよ！\n"
             for msg, new_content in filtered_messages:
