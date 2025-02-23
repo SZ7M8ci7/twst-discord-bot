@@ -71,14 +71,7 @@ try:
         filtered_messages = await check_not_finished(CHANNEL_ID:= 1290587266695036958)
         # 結果をユーザーに返信
         count = 0
-        tokyo_tz = timezone('Asia/Tokyo')
-        now = datetime.datetime.now(tokyo_tz)
-        days_ago = now - datetime.timedelta(days=7)
-        recent_filtered_messages = [
-            msg for msg in filtered_messages 
-            if msg[0].created_at.astimezone(tokyo_tz) < days_ago
-        ]
-        if recent_filtered_messages:
+        if filtered_messages:
             response = "まだ入力されてない画像を最大10件表示するよ！\n"
             for msg, new_content in filtered_messages:
                 response += f"- [{new_content}](https://discord.com/channels/1289921439310417920/{CHANNEL_ID}/{msg.id})\n"
@@ -105,7 +98,14 @@ try:
         now = datetime.datetime.now(tokyo_tz)
         if now.weekday() == 5 and now.hour == 11:
             filtered_messages = await check_not_finished(CHANNEL_ID:= 1290587266695036958)
-            if len(filtered_messages):
+            tokyo_tz = timezone('Asia/Tokyo')
+            now = datetime.datetime.now(tokyo_tz)
+            days_ago = now - datetime.timedelta(days=7)
+            recent_filtered_messages = [
+                msg for msg in filtered_messages 
+                if msg[0].created_at.astimezone(tokyo_tz) < days_ago
+            ]
+            if len(recent_filtered_messages):
                 channel = client.get_channel(CHANNEL_ID)
                 await channel.send(f'未入力のスクショが{len(filtered_messages)}件あるよ！')
     
