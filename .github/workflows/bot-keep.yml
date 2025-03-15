@@ -1,0 +1,15 @@
+name: Keep Koyeb App Alive
+
+on:
+  schedule:
+    - cron: '*/27 * * * *'  # 27分ごとに実行
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send request to keep server alive
+      run: |
+        curl -fsSL "https://enthusiastic-sonni-twisted-1daeb30f.koyeb.app/"
+        echo "Request sent to keep Koyeb app alive!"
