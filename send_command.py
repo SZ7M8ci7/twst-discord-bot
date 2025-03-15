@@ -6,7 +6,7 @@ CHANNEL_ID = os.getenv('CHANNEL_ID')
 COMMAND_TEXT = '/tellme'  # 送りたいDiscordコマンド
 
 headers = {
-    'Authorization': DISCORD_TOKEN,
+    'Authorization': 'Bot ' + DISCORD_TOKEN,
     'Content-Type': 'application/json',
 }
 
