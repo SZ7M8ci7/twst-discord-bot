@@ -108,6 +108,16 @@ try:
             if len(recent_filtered_messages):
                 channel = client.get_channel(CHANNEL_ID)
                 await channel.send(f'未入力のスクショが{len(filtered_messages)}件あるよ！')
+        else:
+            filtered_messages = await check_not_finished(CHANNEL_ID:= 1290587266695036958)
+            tokyo_tz = timezone('Asia/Tokyo')
+            now = datetime.datetime.now(tokyo_tz)
+            days_ago = now - datetime.timedelta(days=7)
+            recent_filtered_messages = [
+                msg for msg in filtered_messages 
+                if msg[0].created_at.astimezone(tokyo_tz) < days_ago
+            ]
+            print(recent_filtered_messages)
     
     async def sync_done(send_message):
         done_status = False
