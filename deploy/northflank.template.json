@@ -1,0 +1,127 @@
+{
+  "$schema": "https://api.northflank.com/v1/schemas/template",
+  "apiVersion": "v1.2",
+  "name": "twst-discord-bot",
+  "description": "Deploy the Discord bot to Northflank Sandbox with always-on compute.",
+  "arguments": {
+    "DISCORD_TOKEN": "",
+    "GOOGLE_PROJECT_ID": "",
+    "GOOGLE_PRIVATE_KEY_ID": "",
+    "GOOGLE_PRIVATE_KEY": "",
+    "GOOGLE_CLIENT_EMAIL": "",
+    "GOOGLE_CLIENT_X509_CERT_URL": "",
+    "GOOGLE_CLIENT_ID": ""
+  },
+  "options": {
+    "autorun": false,
+    "concurrencyPolicy": "queue"
+  },
+  "spec": {
+    "kind": "Workflow",
+    "spec": {
+      "type": "sequential",
+      "steps": [
+        {
+          "kind": "Project",
+          "ref": "project",
+          "spec": {
+            "name": "twst-discord-bot",
+            "description": "Discord bot deployment"
+          }
+        },
+        {
+          "kind": "Workflow",
+          "spec": {
+            "type": "sequential",
+            "context": {
+              "projectId": "${refs.project.id}"
+            },
+            "steps": [
+              {
+                "kind": "SecretGroup",
+                "ref": "secrets",
+                "spec": {
+                  "name": "bot-secrets",
+                  "type": "secret",
+                  "secretType": "environment-arguments",
+                  "priority": 10,
+                  "secrets": {
+                    "variables": {
+                      "DISCORD_TOKEN": "${args.DISCORD_TOKEN}",
+                      "GOOGLE_PROJECT_ID": "${args.GOOGLE_PROJECT_ID}",
+                      "GOOGLE_PRIVATE_KEY_ID": "${args.GOOGLE_PRIVATE_KEY_ID}",
+                      "GOOGLE_PRIVATE_KEY": "${args.GOOGLE_PRIVATE_KEY}",
+                      "GOOGLE_CLIENT_EMAIL": "${args.GOOGLE_CLIENT_EMAIL}",
+                      "GOOGLE_CLIENT_X509_CERT_URL": "${args.GOOGLE_CLIENT_X509_CERT_URL}",
+                      "GOOGLE_CLIENT_ID": "${args.GOOGLE_CLIENT_ID}"
+                    },
+                    "files": {}
+                  }
+                }
+              },
+              {
+                "kind": "CombinedService",
+                "ref": "bot",
+                "spec": {
+                  "name": "discord-bot",
+                  "description": "Discord bot with FastAPI health endpoint",
+                  "billing": {
+                    "deploymentPlan": "nf-compute-10"
+                  },
+                  "deployment": {
+                    "instances": 1
+                  },
+                  "vcsData": {
+                    "projectType": "github",
+                    "projectUrl": "https://github.com/SZ7M8ci7/twst-discord-bot",
+                    "projectBranch": "main"
+                  },
+                  "ports": [
+                    {
+                      "name": "http",
+                      "internalPort": 8080,
+                      "protocol": "HTTP",
+                      "public": true,
+                      "domains": [],
+                      "disableNfDomain": false
+                    }
+                  ],
+                  "buildSettings": {
+                    "dockerfile": {
+                      "dockerFilePath": "/Dockerfile",
+                      "dockerWorkDir": "/",
+                      "buildEngine": "kaniko",
+                      "useCache": false
+                    }
+                  },
+                  "healthChecks": [
+                    {
+                      "type": "startupProbe",
+                      "protocol": "HTTP",
+                      "path": "/healthz",
+                      "port": 8080,
+                      "initialDelaySeconds": 5,
+                      "periodSeconds": 10,
+                      "timeoutSeconds": 5,
+                      "failureThreshold": 18
+                    },
+                    {
+                      "type": "livenessProbe",
+                      "protocol": "HTTP",
+                      "path": "/healthz",
+                      "port": 8080,
+                      "initialDelaySeconds": 20,
+                      "periodSeconds": 30,
+                      "timeoutSeconds": 5,
+                      "failureThreshold": 3
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

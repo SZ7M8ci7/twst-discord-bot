@@ -1,2 +1,10 @@
 main_local.pyw
 main_bk.pyw
+.env
+.env.*
+.idea/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log

@@ -28,6 +28,20 @@ FURNITURE_TYPE_CONST = ["内観・外観：前景"
                         ,"雑貨：小物雑貨"
                         ,"雑貨：衣装"]
 
+
+def get_env(*names):
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return None
+
+
+def normalize_private_key(value):
+    if not value:
+        return value
+    return value.replace("\\n", "\n")
+
 def hankaku_to_zenkaku(text):
     return mojimoji.han_to_zen(text)
 
@@ -60,7 +74,9 @@ async def check_not_finished(CHANNEL_ID):
     return filtered_messages
 
 try:
-    TOKEN = os.environ.get("TOKEN")
+    TOKEN = get_env("DISCORD_TOKEN", "TOKEN")
+    if not TOKEN:
+        raise RuntimeError("DISCORD_TOKEN or TOKEN is not set.")
 
     intents = discord.Intents.all()
     client = discord.Client(intents=intents)
@@ -157,15 +173,15 @@ try:
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
         client_credentials = {
             "type": "service_account",
-            "project_id": os.environ.get("project_id"),
-            "private_key_id": os.environ.get("private_key_id"),
-            "private_key": os.environ.get("private_key"),
-            "client_email": os.environ.get("client_email"),
-            "client_id": "104427532326867566121",
+            "project_id": get_env("GOOGLE_PROJECT_ID", "project_id"),
+            "private_key_id": get_env("GOOGLE_PRIVATE_KEY_ID", "private_key_id"),
+            "private_key": normalize_private_key(get_env("GOOGLE_PRIVATE_KEY", "private_key")),
+            "client_email": get_env("GOOGLE_CLIENT_EMAIL", "client_email"),
+            "client_id": get_env("GOOGLE_CLIENT_ID", "client_id") or "104427532326867566121",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": os.environ.get("client_x509_cert_url")
+            "client_x509_cert_url": get_env("GOOGLE_CLIENT_X509_CERT_URL", "client_x509_cert_url")
         }
 
         creds = ServiceAccountCredentials._from_parsed_json_keyfile(client_credentials, scope, None, None)
@@ -184,11 +200,13 @@ try:
         # C列を取得
         col_C = sheet.col_values(3)  # C列のすべての値を取得
         # 同じ文字列が存在しない場合のみ追加
-        if furniture_name not in col_C:
-            first_empty_row = len(col_C) + 1  # 最初の空のセルの行番号を取得
-            sheet.update_cell(first_empty_row, 3, furniture_name)
+        if furniture_name in col_C:
+            target_row = col_C.index(furniture_name) + 1
+        else:
+            target_row = len(col_C) + 1
+            sheet.update_cell(target_row, 3, furniture_name)
         if furniture_type:
-            sheet.update_cell(first_empty_row, 8, furniture_type)
+            sheet.update_cell(target_row, 8, furniture_type)
 
 
 
