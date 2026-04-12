@@ -1,17 +1,15 @@
 FROM python:3.11
 WORKDIR /bot
 
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 ENV TZ Asia/Tokyo
 ENV TERM xterm
 ENV PYTHONUNBUFFERED 1
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 
-# 更新・日本語化
-RUN apt-get update && apt-get install -y --no-install-recommends locales libgl1-mesa-glx && \
-    localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 && \
+# OpenCV import に必要なランタイムだけ入れる
+RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /bot/
