@@ -18,6 +18,13 @@ class SyncLogicTests(unittest.TestCase):
         content = "家具名：家具A\n家具：椅子"
         self.assertEqual(extract_furniture_name(content), "家具ａ")
 
+    def test_extracts_furniture_name_from_first_line(self):
+        content = "くつろぎクッションソファ\n家具：椅子"
+        self.assertEqual(
+            extract_furniture_name(content),
+            "くつろぎクッションソファ",
+        )
+
     def test_short_name_does_not_match_longer_furniture_name(self):
         _, furniture_name = parse_sync_command("0:家具")
         self.assertNotEqual(
@@ -25,8 +32,8 @@ class SyncLogicTests(unittest.TestCase):
             furniture_name,
         )
 
-    def test_does_not_extract_unrelated_text(self):
-        self.assertIsNone(extract_furniture_name("家具：椅子"))
+    def test_does_not_extract_empty_text(self):
+        self.assertIsNone(extract_furniture_name("  \n"))
 
 
 if __name__ == "__main__":

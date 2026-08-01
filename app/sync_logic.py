@@ -22,10 +22,17 @@ def parse_sync_command(content):
 
 
 def extract_furniture_name(content):
-    for line in (content or "").splitlines():
+    lines = (content or "").splitlines()
+    for line in lines:
         normalized_line = mojimoji.han_to_zen(line).strip()
         if not normalized_line.startswith("家具名："):
             continue
         furniture_name = normalize_furniture_name(normalized_line.split("：", 1)[1])
         return furniture_name or None
+
+    # Screenshot posts use the first line as the furniture name.
+    for line in lines:
+        furniture_name = normalize_furniture_name(line)
+        if furniture_name:
+            return furniture_name
     return None

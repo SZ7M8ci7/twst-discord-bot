@@ -46,7 +46,7 @@ Northflank の template argument overrides に次を設定してください。
 
 - `GOOGLE_CLIENT_ID`
 - `SYNC_SOURCE_ID`: GAS が投稿に使う Webhook ID。設定すると、その送信元以外の同期命令を拒否します。
-- `SYNC_HISTORY_LIMIT`: 復元時に遡る同期チャンネルの件数。既定値・上限ともに `100` です。
+- `SYNC_HISTORY_LIMIT`: 復元時に遡る同期チャンネルの件数。既定値・上限ともに `1000` です。
 
 Discord トークンは後方互換のため、従来の `DISCORD_TOKEN` と `TOKEN` も引き続き利用できます。
 
