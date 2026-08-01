@@ -1,3 +1,4 @@
+import asyncio
 from datetime import timezone
 import datetime
 import logging
@@ -11,7 +12,7 @@ from discord import app_commands
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import mojimoji
-from sync_logic import extract_furniture_name, parse_sync_command
+from sync_logic import build_sheet_statuses, extract_furniture_name, parse_sync_command
 dotenv.load_dotenv()
 
 logging.basicConfig(
@@ -24,7 +25,10 @@ SCREENSHOT_CHANNEL_ID = 1290587266695036958
 SYNC_CHANNEL_ID = 1297464731841597460
 DONE_EMOJI = "<:done:1290672968732774432>"
 SCREENSHOT_HISTORY_LIMIT = 10000
-SYNC_HISTORY_LIMIT = min(int(os.environ.get("SYNC_HISTORY_LIMIT", "10000")), 10000)
+SHEET_SYNC_INTERVAL_MINUTES = max(
+    int(os.environ.get("SHEET_SYNC_INTERVAL_MINUTES", "10")),
+    1,
+)
 SYNC_SOURCE_ID = os.environ.get("SYNC_SOURCE_ID")
 
 FURNITURE_TYPE_CONST = ["内観・外観：前景"
@@ -116,6 +120,7 @@ try:
     client = discord.Client(intents=intents)
     tree = app_commands.CommandTree(client)
     restore_started = False
+    screenshot_messages_by_name = {}
 
     @tree.command(name="tellme",description="未入力のスクショを探してくるよ")
     async def tellme(interaction: discord.Interaction):
@@ -148,6 +153,8 @@ try:
             restore_started = True
             try:
                 await restore_done_reactions()
+                if not sheet_reconciliation_loop.is_running():
+                    sheet_reconciliation_loop.start()
             except Exception:
                 restore_started = False
                 logger.exception("Failed to restore done reactions")
@@ -222,65 +229,75 @@ try:
         )
 
     async def restore_done_reactions():
+        global screenshot_messages_by_name
         screenshot_channel = client.get_channel(SCREENSHOT_CHANNEL_ID)
         if screenshot_channel is None:
             screenshot_channel = await client.fetch_channel(SCREENSHOT_CHANNEL_ID)
-        sync_channel = client.get_channel(SYNC_CHANNEL_ID)
-        if sync_channel is None:
-            sync_channel = await client.fetch_channel(SYNC_CHANNEL_ID)
 
         screenshot_messages = [
             message
             async for message in screenshot_channel.history(limit=SCREENSHOT_HISTORY_LIMIT)
             if is_target_screenshot(message)
         ]
-        messages_by_name = {}
+        screenshot_messages_by_name = {}
         for message in screenshot_messages:
             furniture_name = extract_furniture_name(message.content)
             if furniture_name:
-                messages_by_name.setdefault(furniture_name, []).append(message)
+                screenshot_messages_by_name.setdefault(furniture_name, []).append(message)
 
-        unresolved_names = set(messages_by_name)
-        latest_statuses = {}
-        scanned_count = 0
-        async for sync_message in sync_channel.history(
-            limit=SYNC_HISTORY_LIMIT,
-            oldest_first=False,
-        ):
-            scanned_count += 1
-            if not is_trusted_sync_message(sync_message):
-                continue
-            command = parse_sync_command(sync_message.content)
-            if command is None:
-                continue
-            done_status, furniture_name = command
-            if furniture_name not in unresolved_names:
-                continue
-            latest_statuses[furniture_name] = done_status
-            unresolved_names.remove(furniture_name)
-            if not unresolved_names:
-                break
+        result = await reconcile_done_reactions_from_sheet()
+        logger.info(
+            "Screenshot index initialized screenshots=%d names=%d",
+            len(screenshot_messages),
+            len(screenshot_messages_by_name),
+        )
+        return result
 
-        restored_count = 0
-        for furniture_name, done_status in latest_statuses.items():
-            if not done_status:
+    def load_sheet_statuses():
+        sheet = connect_to_google_sheets()
+        return build_sheet_statuses(sheet.get("B3:C"))
+
+    async def reconcile_done_reactions_from_sheet():
+        sheet_statuses = await asyncio.to_thread(load_sheet_statuses)
+        added_count = 0
+        removed_count = 0
+        matched_names = 0
+        for furniture_name, messages in screenshot_messages_by_name.items():
+            done_status = sheet_statuses.get(furniture_name)
+            if done_status is None:
                 continue
-            for message in messages_by_name[furniture_name]:
+            matched_names += 1
+            for message in messages:
                 done_reaction = get_done_reaction(message)
-                if done_reaction is None or not done_reaction.me:
+                if done_status and (done_reaction is None or not done_reaction.me):
                     await message.add_reaction(DONE_EMOJI)
-                    restored_count += 1
+                    added_count += 1
+                elif not done_status and done_reaction is not None and done_reaction.me:
+                    await message.remove_reaction(done_reaction.emoji, client.user)
+                    removed_count += 1
 
         logger.info(
-            "Done-reaction restoration completed screenshots=%d sync_messages=%d "
-            "resolved=%d unresolved=%d restored=%d",
-            len(screenshot_messages),
-            scanned_count,
-            len(latest_statuses),
-            len(unresolved_names),
-            restored_count,
+            "Sheet reconciliation completed sheet_names=%d matched_names=%d "
+            "unmatched_screenshots=%d added=%d removed=%d",
+            len(sheet_statuses),
+            matched_names,
+            len(screenshot_messages_by_name) - matched_names,
+            added_count,
+            removed_count,
         )
-        return restored_count
+        return added_count, removed_count
+
+    @tasks.loop(minutes=SHEET_SYNC_INTERVAL_MINUTES)
+    async def sheet_reconciliation_loop():
+        try:
+            await reconcile_done_reactions_from_sheet()
+        except Exception:
+            logger.exception("Periodic sheet reconciliation failed")
+
+    @sheet_reconciliation_loop.before_loop
+    async def before_sheet_reconciliation_loop():
+        await client.wait_until_ready()
+        await asyncio.sleep(SHEET_SYNC_INTERVAL_MINUTES * 60)
 
     # Google Sheets APIに接続するための関数
     def connect_to_google_sheets():
@@ -372,6 +389,10 @@ try:
 
         # メッセージが画像付きの場合、家具入力ロジック
         if message.attachments:
+            if message.channel.id == SCREENSHOT_CHANNEL_ID and is_target_screenshot(message):
+                furniture_name = extract_furniture_name(message.content)
+                if furniture_name:
+                    screenshot_messages_by_name.setdefault(furniture_name, []).append(message)
             write_spreadsheet(message)
 
 

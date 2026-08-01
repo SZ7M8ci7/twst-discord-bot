@@ -1,6 +1,9 @@
 import mojimoji
 
 
+PENDING_STATES = {"未入力", "編集中"}
+
+
 def normalize_furniture_name(text):
     normalized = mojimoji.han_to_zen(text or "").strip()
     return " ".join(normalized.split()).casefold()
@@ -36,3 +39,14 @@ def extract_furniture_name(content):
         if furniture_name:
             return furniture_name
     return None
+
+
+def build_sheet_statuses(rows):
+    statuses = {}
+    for row in rows:
+        state = str(row[0]).strip() if row else ""
+        furniture_name = normalize_furniture_name(row[1] if len(row) > 1 else "")
+        if not furniture_name:
+            continue
+        statuses[furniture_name] = state not in PENDING_STATES
+    return statuses

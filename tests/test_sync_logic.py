@@ -1,6 +1,6 @@
 import unittest
 
-from app.sync_logic import extract_furniture_name, parse_sync_command
+from app.sync_logic import build_sheet_statuses, extract_furniture_name, parse_sync_command
 
 
 class SyncLogicTests(unittest.TestCase):
@@ -34,6 +34,33 @@ class SyncLogicTests(unittest.TestCase):
 
     def test_does_not_extract_empty_text(self):
         self.assertIsNone(extract_furniture_name("  \n"))
+
+    def test_builds_sheet_statuses_with_existing_gas_semantics(self):
+        self.assertEqual(
+            build_sheet_statuses(
+                [
+                    ["未入力", "家具A"],
+                    ["編集中", "家具B"],
+                    ["記入済", "家具C"],
+                    ["公開済", "家具D"],
+                    ["", "家具E"],
+                    ["記入済", ""],
+                ]
+            ),
+            {
+                "家具ａ": False,
+                "家具ｂ": False,
+                "家具ｃ": True,
+                "家具ｄ": True,
+                "家具ｅ": True,
+            },
+        )
+
+    def test_last_duplicate_sheet_row_wins(self):
+        self.assertEqual(
+            build_sheet_statuses([["未入力", "家具A"], ["記入済", "家具A"]]),
+            {"家具ａ": True},
+        )
 
 
 if __name__ == "__main__":
