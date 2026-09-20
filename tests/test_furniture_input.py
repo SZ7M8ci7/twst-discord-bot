@@ -91,6 +91,16 @@ class PostTests(unittest.TestCase):
         self.assertEqual(build_plan([existing], post, result()).row, 3)
         self.assertNotIn("C", build_plan([existing], post, result()).values)
 
+    def test_sheet_names_convert_all_half_width_characters(self):
+        posted = "ABC abc 123 ｼﾙﾊﾞｰ!?#&+-/[]()①"
+        post = parse_post(f"家具名：{posted}\n雑貨：衣装")
+        plan = build_plan([], post, result())
+        self.assertEqual(
+            plan.values["C"], "ＡＢＣ　ａｂｃ　１２３　シルバー！？＃＆＋－／［］（）①"
+        )
+        self.assertEqual(post["posted_name"], posted)
+        self.assertEqual(post["key"], normalize_name(posted))
+
 
 class PlanTests(unittest.TestCase):
     def test_new_row_and_formulas(self):
