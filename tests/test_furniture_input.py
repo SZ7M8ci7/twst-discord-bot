@@ -80,6 +80,17 @@ class PostTests(unittest.TestCase):
         self.assertNotEqual(a, revision_key(1, "b", [2, 3], "v1"))
         self.assertNotEqual(a, revision_key(1, "a", [2, 4], "v1"))
 
+    def test_sheet_names_use_full_width_parentheses(self):
+        posted = "フレンドリーテック(シルバー)"
+        post = parse_post(f"家具名：{posted}\n雑貨：衣装")
+        plan = build_plan([], post, result())
+        self.assertEqual(plan.values["C"], "フレンドリーテック（シルバー）")
+        self.assertEqual(post["posted_name"], posted)
+        self.assertEqual(post["key"], normalize_name(posted))
+        existing = row(name=posted)
+        self.assertEqual(build_plan([existing], post, result()).row, 3)
+        self.assertNotIn("C", build_plan([existing], post, result()).values)
+
 
 class PlanTests(unittest.TestCase):
     def test_new_row_and_formulas(self):

@@ -42,6 +42,8 @@ def parse_post(content):
     canonical = {normalize_name(k): v for k, v in aliases.items()}.get(
         normalize_name(name), name
     )
+    # Match the sheet's name notation; ASCII parentheses trigger its red warning.
+    canonical = canonical.translate(str.maketrans("()", "（）"))
     return {
         "name": canonical,
         "posted_name": name,
