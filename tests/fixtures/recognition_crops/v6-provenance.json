@@ -1,0 +1,70 @@
+{
+  "short-dorm-none.png": {
+    "source_attachment_id": "1391768475940421682",
+    "source_sha256": "f8d0d68cc65defbc62d2535b3498fc200d2f96fa91dbaa1c38e062b4b0ee7670",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "8c872f8eb38c659d5702bb6e60b6a9d738b52417cc49f3a5be6ddbb1e4cbcaa0"
+  },
+  "cloth-count-jade.png": {
+    "source_attachment_id": "1365331013571706950",
+    "source_sha256": "04ea5dcda30c916ab2de24a9f75a4db258083ce4fcf17c2b40d9228491ac7436",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "d61ddafaa6dc938a6bbc4d75de225fa4c8c7162ae85e5413fb5730d4d98e284c"
+  },
+  "shortage-count-ten.png": {
+    "source_attachment_id": "1444658857598124043",
+    "source_sha256": "b7f02c0fcb8bcd0b5af28fbbd6b1d612a752164217895c1e73f7d211e04be439",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "791981a65436889152995619e17094289ce5ed714b95e7729c11261df026e346"
+  },
+  "shortage-count-eight.png": {
+    "source_attachment_id": "1444658496229343343",
+    "source_sha256": "7a3d4b60d6788382c538c85b2c3c5f4407a70d10c5a1ae8e4c1bfc02d76df1c2",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "9119f615e8cfaac5bf59f09e77f629f304b10b92b5ac41dd84c8a3ef16d2130c"
+  },
+  "shortage-craft.png": {
+    "source_attachment_id": "1444658857598124043",
+    "source_sha256": "b7f02c0fcb8bcd0b5af28fbbd6b1d612a752164217895c1e73f7d211e04be439",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "9443e97616f9752207f3ee201a7b35cdecf7d92bf186e48db6fdd4d1f81010bd"
+  },
+  "legacy-status.png": {
+    "source_attachment_id": "1362076944732131539",
+    "crop_original": [
+      433,
+      0,
+      2099,
+      1054
+    ],
+    "resize": [
+      833,
+      527
+    ],
+    "purpose": "v6 regression test only; not a production template",
+    "source_sha256": "6ff5cfb05c30baf23a38a89a967e74d9d7a7d273411b38275b6eff3238ef25a0",
+    "fixture_sha256": "e18f17d32d38d75c62e30475088652c3b734bdbc61f0105369fd7d4788a5494e"
+  },
+  "shortage-craft-hi.png": {
+    "source_attachment_id": "1444658857598124043",
+    "source_sha256": "b7f02c0fcb8bcd0b5af28fbbd6b1d612a752164217895c1e73f7d211e04be439",
+    "purpose": "v6 regression test only; not a production template",
+    "normalization": [
+      1664,
+      972
+    ],
+    "fixture_sha256": "d857a0a4677da5852119eea6d5c2c1ce65253ab8f7ee50ac6021adddb8cc966b"
+  },
+  "clay-count.png": {
+    "source_attachment_id": "1529082961847128185",
+    "source_sha256": "e961fbf8366b154c403a27fb0191376833cf3a97012a76bd41579d8e0d8d0ffd",
+    "purpose": "v6 regression test only; not a production template",
+    "fixture_sha256": "53d4ebe08f31c63d26ea40a722fd839b7cc97cd6d15c0c9f74393f4ddbff8774"
+  },
+  "cloth-count-queen.png": {
+    "source_attachment_id": "1497084332047728770",
+    "source_sha256": "b2f343dfe0d6fd35bb554836b2534745070533a34b676a4cd9d7a47373efefe3",
+    "fixture_sha256": "3459c53bcee22d3ff9b81d957b2834fc3e65e451734c72497ff1ddec6568b679",
+    "purpose": "v6 regression test only; not a production template"
+  }
+}

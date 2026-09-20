@@ -1,0 +1,71 @@
+{
+  "note": "Regression test crops only; never loaded by the production recognizer. No full screenshots.",
+  "crops": [
+    {
+      "file": "stone.png",
+      "source_attachment_id": "1529080716007051314",
+      "normalized_box": [
+        518,
+        114,
+        576,
+        171
+      ],
+      "scale": 1
+    },
+    {
+      "file": "ore.png",
+      "source_attachment_id": "1529082129873375283",
+      "normalized_box": [
+        518,
+        114,
+        576,
+        171
+      ],
+      "scale": 1
+    },
+    {
+      "file": "cloth-count.png",
+      "source_attachment_id": "1529084603221151834",
+      "normalized_box": [
+        514,
+        167,
+        580,
+        188
+      ],
+      "scale": 2
+    },
+    {
+      "file": "short-cap.png",
+      "source_attachment_id": "1538812877626937454",
+      "normalized_box": [
+        145,
+        360,
+        185,
+        386
+      ],
+      "scale": 2
+    },
+    {
+      "file": "bonus-nine.png",
+      "source_attachment_id": "1517792372983861309",
+      "normalized_box": [
+        293,
+        103,
+        325,
+        128
+      ],
+      "scale": 2
+    },
+    {
+      "file": "cloth-count-ruggie.png",
+      "source_attachment_id": "1529084483196944444",
+      "normalized_box": [
+        514,
+        167,
+        580,
+        188
+      ],
+      "scale": 2
+    }
+  ]
+}

@@ -1,0 +1,602 @@
+{
+  "version": "v4",
+  "note": "Cropped game UI only. Full screenshots remain in ignored .local/. Coordinates refer to normalized panel images.",
+  "templates": [
+    {
+      "file": "detail_anchor.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        390,
+        94,
+        462,
+        112
+      ]
+    },
+    {
+      "file": "status_anchor.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        31,
+        18,
+        160,
+        38
+      ]
+    },
+    {
+      "file": "rarity_SR.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        49,
+        20,
+        125,
+        53
+      ]
+    },
+    {
+      "file": "rarity_SSR.png",
+      "source_attachment_id": "1545341610697429042",
+      "normalized_box": [
+        49,
+        20,
+        125,
+        53
+      ]
+    },
+    {
+      "file": "rarity_R.png",
+      "source_attachment_id": "1545341835323510844",
+      "normalized_box": [
+        49,
+        20,
+        125,
+        53
+      ]
+    },
+    {
+      "file": "theme_スタイリッシュ.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        87,
+        400,
+        113,
+        428
+      ]
+    },
+    {
+      "file": "theme_ポップ.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        224,
+        400,
+        250,
+        428
+      ]
+    },
+    {
+      "file": "theme_エレガント.png",
+      "source_attachment_id": "1545341610697429042",
+      "normalized_box": [
+        87,
+        400,
+        113,
+        428
+      ]
+    },
+    {
+      "file": "dorm_スカラビア.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        89,
+        432,
+        112,
+        465
+      ]
+    },
+    {
+      "file": "dorm_なし.png",
+      "source_attachment_id": "1545341610697429042",
+      "normalized_box": [
+        70,
+        436,
+        112,
+        457
+      ]
+    },
+    {
+      "file": "baseline.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        66,
+        71,
+        245,
+        91
+      ]
+    },
+    {
+      "file": "zero.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        421,
+        340,
+        437,
+        364
+      ]
+    },
+    {
+      "file": "size_1x1.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        263,
+        362,
+        301,
+        384
+      ]
+    },
+    {
+      "file": "status_anchor2.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        31,
+        18,
+        160,
+        38
+      ]
+    },
+    {
+      "file": "zero2.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        464,
+        340,
+        480,
+        364
+      ]
+    },
+    {
+      "file": "craft_anchor.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        401,
+        73,
+        574,
+        114
+      ]
+    },
+    {
+      "file": "detail_tab_anchor.png",
+      "source_attachment_id": "1538812805245833316",
+      "normalized_box": [
+        602,
+        73,
+        775,
+        114
+      ]
+    },
+    {
+      "file": "theme_ユニーク.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        87,
+        400,
+        113,
+        428
+      ]
+    },
+    {
+      "file": "dorm_ナイトレイブンカレッジ.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        89,
+        432,
+        112,
+        465
+      ]
+    },
+    {
+      "file": "dorm_ディアソムニア.png",
+      "source_attachment_id": "1533112253891743996",
+      "normalized_box": [
+        89,
+        432,
+        112,
+        465
+      ]
+    },
+    {
+      "file": "material_木.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        434,
+        155,
+        488,
+        204
+      ]
+    },
+    {
+      "file": "material_金属.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        520,
+        155,
+        574,
+        204
+      ]
+    },
+    {
+      "file": "material_布.png",
+      "source_attachment_id": "1538812804906098698",
+      "normalized_box": [
+        606,
+        155,
+        660,
+        204
+      ]
+    },
+    {
+      "file": "zero_slot2.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        507,
+        340,
+        523,
+        364
+      ]
+    },
+    {
+      "file": "zero_slot4.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        593,
+        340,
+        609,
+        364
+      ]
+    },
+    {
+      "file": "zero_slot5.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        636,
+        340,
+        652,
+        364
+      ]
+    },
+    {
+      "file": "zero_slot6.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        679,
+        340,
+        695,
+        364
+      ]
+    },
+    {
+      "file": "size_1x1_alt.png",
+      "source_attachment_id": "1545341835323510844",
+      "normalized_box": [
+        263,
+        362,
+        301,
+        384
+      ]
+    },
+    {
+      "file": "status_anchor_grim.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        31,
+        18,
+        160,
+        38
+      ]
+    },
+    {
+      "file": "baseline_grim.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        66,
+        71,
+        245,
+        91
+      ]
+    },
+    {
+      "file": "status_anchor_silver.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        31,
+        18,
+        160,
+        38
+      ]
+    },
+    {
+      "file": "baseline_silver.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        66,
+        71,
+        245,
+        91
+      ]
+    },
+    {
+      "file": "zero_crewel0.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        421,
+        340,
+        437,
+        364
+      ]
+    },
+    {
+      "file": "zero_crewel1.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        464,
+        340,
+        480,
+        364
+      ]
+    },
+    {
+      "file": "zero_crewel2.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        507,
+        340,
+        523,
+        364
+      ]
+    },
+    {
+      "file": "zero_crewel4.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        593,
+        340,
+        609,
+        364
+      ]
+    },
+    {
+      "file": "zero_crewel5.png",
+      "source_attachment_id": "1545341611213590528",
+      "normalized_box": [
+        636,
+        340,
+        652,
+        364
+      ]
+    },
+    {
+      "file": "zero_grim0.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        421,
+        340,
+        437,
+        364
+      ]
+    },
+    {
+      "file": "zero_grim1.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        464,
+        340,
+        480,
+        364
+      ]
+    },
+    {
+      "file": "zero_grim2.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        507,
+        340,
+        523,
+        364
+      ]
+    },
+    {
+      "file": "zero_grim4.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        593,
+        340,
+        609,
+        364
+      ]
+    },
+    {
+      "file": "zero_grim5.png",
+      "source_attachment_id": "1538812805636161647",
+      "normalized_box": [
+        636,
+        340,
+        652,
+        364
+      ]
+    },
+    {
+      "file": "zero_silver0.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        421,
+        340,
+        437,
+        364
+      ]
+    },
+    {
+      "file": "zero_silver1.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        464,
+        340,
+        480,
+        364
+      ]
+    },
+    {
+      "file": "zero_silver2.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        507,
+        340,
+        523,
+        364
+      ]
+    },
+    {
+      "file": "zero_silver4.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        593,
+        340,
+        609,
+        364
+      ]
+    },
+    {
+      "file": "zero_silver5.png",
+      "source_attachment_id": "1533112255275729007",
+      "normalized_box": [
+        636,
+        340,
+        652,
+        364
+      ]
+    },
+    {
+      "file": "size_1x1_silver.png",
+      "source_attachment_id": "1533112253891743996",
+      "normalized_box": [
+        263,
+        362,
+        301,
+        384
+      ]
+    },
+    {
+      "file": "crest_ハーツラビュル.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        411,
+        303,
+        442,
+        340
+      ]
+    },
+    {
+      "file": "crest_サバナクロー.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        454,
+        303,
+        485,
+        340
+      ]
+    },
+    {
+      "file": "crest_オクタヴィネル.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        497,
+        303,
+        528,
+        340
+      ]
+    },
+    {
+      "file": "crest_スカラビア.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        540,
+        303,
+        571,
+        340
+      ]
+    },
+    {
+      "file": "crest_ポムフィオーレ.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        583,
+        303,
+        614,
+        340
+      ]
+    },
+    {
+      "file": "crest_イグニハイド.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        626,
+        303,
+        657,
+        340
+      ]
+    },
+    {
+      "file": "crest_ディアソムニア.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        669,
+        303,
+        700,
+        340
+      ]
+    },
+    {
+      "file": "crest_ナイトレイブンカレッジ.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        712,
+        303,
+        743,
+        340
+      ]
+    },
+    {
+      "file": "size_multiply.png",
+      "source_attachment_id": "1545341610697429042",
+      "normalized_box": [
+        277,
+        366,
+        286,
+        378
+      ]
+    },
+    {
+      "file": "size_label.png",
+      "source_attachment_id": "1547922931626147860",
+      "normalized_box": [
+        217,
+        367,
+        258,
+        381
+      ]
+    },
+    {
+      "file": "theme_ベーシック.png",
+      "source_attachment_id": "1547922932318081146",
+      "normalized_box": [
+        651,
+        124,
+        679,
+        153
+      ],
+      "normalized_panel": [
+        794,
+        386
+      ],
+      "resize_factor": 0.85,
+      "note": "Theme label icon only; no radar graph data."
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "file": "ordinary-material-craft.png",
+    "source_image": "1355097119937265854",
+    "source_sha256": "19bb1f1b8e5475f6a5a700c0e2deb7ba46032880b972d5f9830613b16e06ea2c",
+    "crop": [
+      475,
+      60,
+      1689,
+      986
+    ],
+    "resize": [
+      832,
+      486
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "010c77a56d24a0e450668752a0065d29c9714fcec16b730ef42ecab7ff008532"
+  },
+  {
+    "file": "limited-material-craft.png",
+    "source_image": "1317313829692244008",
+    "source_sha256": "8ebd9eefd34d99202b9f8ac63d53d432268f0f09e2282ab733603ca200c07f8d",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      832,
+      486
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "39186c87848511cf1ecf706ecc7055d355f80421df9b49457876fd60f1199e19"
+  },
+  {
+    "file": "limited-material-craft-hi.png",
+    "source_image": "1317313829692244008",
+    "source_sha256": "8ebd9eefd34d99202b9f8ac63d53d432268f0f09e2282ab733603ca200c07f8d",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      1664,
+      972
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "3d124d4100cc86f5b1a2f6e9301d064c24b3c6a52fdd457ec65552c925aa8369"
+  },
+  {
+    "file": "limited-shortage-craft.png",
+    "source_image": "1324687989749583945",
+    "source_sha256": "c0d0317044817cbe3fed8e08fc8ac8b77339f531e82c2dccff26dee0393bba02",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      832,
+      486
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "a4e709bd1f343aef007f30e20dd6ea8a31da65e6071b1487216cbcc0849e9649"
+  },
+  {
+    "file": "limited-shortage-craft-hi.png",
+    "source_image": "1324687989749583945",
+    "source_sha256": "c0d0317044817cbe3fed8e08fc8ac8b77339f531e82c2dccff26dee0393bba02",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      1664,
+      972
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "6243572e7e5f90424af855e8e2122fa2d7e44914f29b3450ee58565f23e6606f"
+  },
+  {
+    "file": "thin-shortage-craft.png",
+    "source_image": "1317039329138311268",
+    "source_sha256": "a6532f360a8c60d0f8e310f499a2a398a383cfa75bd6aa3b435cf19d747deab8",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      832,
+      486
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "59fada1de5fbeba73b6fe55cdc42fd3ec3a51df55ccd9cba1a07b332bdd414cf"
+  },
+  {
+    "file": "thin-shortage-craft-hi.png",
+    "source_image": "1317039329138311268",
+    "source_sha256": "a6532f360a8c60d0f8e310f499a2a398a383cfa75bd6aa3b435cf19d747deab8",
+    "crop": [
+      475,
+      60,
+      1692,
+      989
+    ],
+    "resize": [
+      1664,
+      972
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "60e4a54c1441d1414be6503a9d88977d7c6f37d4aa1652bca7316749d6c6659c"
+  },
+  {
+    "file": "shifted-shop-detail.png",
+    "source_image": "1305457709344358502",
+    "source_sha256": "41abb57478565a68a41ee3f24b7adf3e00604a3a652b0c27caf62bae86baf878",
+    "crop": [
+      162,
+      232,
+      1618,
+      945
+    ],
+    "resize": [
+      832,
+      486
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "69a3059aa65f97f675edb852b7f1663b65a1ddd34cdc99783a326c3a9d67543b"
+  },
+  {
+    "file": "shifted-shop-detail-hi.png",
+    "source_image": "1305457709344358502",
+    "source_sha256": "41abb57478565a68a41ee3f24b7adf3e00604a3a652b0c27caf62bae86baf878",
+    "crop": [
+      162,
+      232,
+      1618,
+      945
+    ],
+    "resize": [
+      1664,
+      972
+    ],
+    "purpose": "regression-test-only",
+    "sha256": "02d1ac18aafd7083357fad612c2b27c48ad4f2df0b2f2de61678d1aae93bc645"
+  }
+]

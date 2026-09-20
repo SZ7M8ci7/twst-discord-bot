@@ -1,0 +1,17 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q app scripts
+      - run: ruff check app/furniture_input scripts tests/test_furniture_input.py tests/test_furniture_recognition.py
+      - run: ruff format --check app/furniture_input scripts tests/test_furniture_input.py tests/test_furniture_recognition.py

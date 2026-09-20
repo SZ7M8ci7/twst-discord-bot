@@ -1,0 +1,782 @@
+{
+  "サイセンタンカガクトシの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1529082837565964348"
+  },
+  "サイセンタンカガクトシの床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1529082963445420042"
+  },
+  "学園の中庭の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1505926739245666424"
+  },
+  "学園の中庭の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1505926945907675277"
+  },
+  "地下水道の床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1497082899676135596"
+  },
+  "地下水道の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1497083575747477566"
+  },
+  "オンボロ風の壁（6周年）": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1484565053972680744"
+  },
+  "オンボロ風の床（6周年）": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1484565108221935758"
+  },
+  "東方の屋敷前の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-post-alias-normalization",
+    "source_post_id": "1455939059661668394"
+  },
+  "東方の屋敷前の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1455938967630254083"
+  },
+  "東方の椿の前景(下)②": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1455938800713990300"
+  },
+  "東方の椿の前景(下)①": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1455938631230292019"
+  },
+  "MARI": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1455938209543360636"
+  },
+  "東方の人力車": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1455938083273965661"
+  },
+  "東方の赤い傘": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1455938001531179164"
+  },
+  "東方の灯籠": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1455937769192034452"
+  },
+  "サンタジャックのヴィネット": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1455018112457117747"
+  },
+  "ジャックとゼロのソリ": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1454387810579775600"
+  },
+  "汽車のパーティション": {
+    "category": "装飾：パーティション",
+    "source": "discord-post",
+    "source_post_id": "1454387748080193617"
+  },
+  "ゼロのクリスマス・フレーム": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1454380227122958479"
+  },
+  "ナイトメアー・ギア（オルト）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1454380121183092801"
+  },
+  "ナイトメアークーリエ（エース）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1445402158068666544"
+  },
+  "クリスマス・タウンの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1445053560088825999"
+  },
+  "クリスマス・タウンの床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1445053371592740864"
+  },
+  "クリスマス・タウンの雪だるま": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1444659015035654306"
+  },
+  "クリスマス・タウンの街灯": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1444658859041095800"
+  },
+  "ナイトメアークーリエ(フロイド)": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1444658497710198805"
+  },
+  "ナイトメアークーリエ(ラギー)": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1444658412351918211"
+  },
+  "ファントムの像(アズール)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1438022512800825426"
+  },
+  "深海の商人の像(アズール)": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1438022176857919540"
+  },
+  "クラブ・ウェア（リドル）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1437673916117286924"
+  },
+  "スカリー ナイトメアースーツの写真②": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1427855191515992145"
+  },
+  "スカリー ナイトメアースーツの写真①": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1427855037861990492"
+  },
+  "ラ・ボンボニエール（エース）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1426162722948517890"
+  },
+  "ターブル・ドゥ・フェット（エース）": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1426162576315777095"
+  },
+  "ファントムの像（ジャミル）": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1421459152244310028"
+  },
+  "熱砂の策謀家の像（ジャミル）": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1421458618577850418"
+  },
+  "アウトドア・ギア（オルト）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1420047254060011662"
+  },
+  "ラ・ボンボニエール(ジャミル)": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1415926214765449226"
+  },
+  "ターブル・ドゥ・フェット(ジャミル)": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1415926034460577912"
+  },
+  "バルガス ハンサムジャージの写真②": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1410639486760517782"
+  },
+  "バルガス ハンサムジャージの写真①": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1410639361346769008"
+  },
+  "ハートトランプのトラップ(フロイド)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1408678644682985552"
+  },
+  "ファントムの像(ヴィル)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1400831140025204789"
+  },
+  "美貌の圧制者の像(ヴィル)": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1400830844821704754"
+  },
+  "セベクのトレーニングセット(クラブ)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1398863375127023657"
+  },
+  "セベクのヘルメット": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1398863091759976530"
+  },
+  "クラブ・ウェア（セベク）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1397125725370449951"
+  },
+  "ダイナーのオブジェ": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1395769247027957770"
+  },
+  "ダイナーの前景（上）②": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1395769049375440956"
+  },
+  "ダイナーの前景（上）①": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1395768841358934128"
+  },
+  "ダイナーのジュークボックス": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1395768726779072596"
+  },
+  "C＆Dダイナー(ケイト)": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1391768477093855405"
+  },
+  "ダイナーの床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1391768036536483931"
+  },
+  "ダイナーの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1391767907578417182"
+  },
+  "ダイナーの椅子②": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1391767725906460774"
+  },
+  "ダイナーの椅子①": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1391767567441461331"
+  },
+  "ダイナーのテーブル": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1391767212410535957"
+  },
+  "ファントムの像(イデア)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1391729496003969207"
+  },
+  "冥府の番人の像(イデア)": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1391729123042263262"
+  },
+  "シルバーのトレーニングセット(クラブ)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1384158086545276981"
+  },
+  "シルバーのヘルメット(クラブ)": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1384157719132377179"
+  },
+  "馬術部のバケツ": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382255004030734468"
+  },
+  "馬術部のハードルセット": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382254907050033204"
+  },
+  "クラブ・ウェア（シルバー）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1382254803249266750"
+  },
+  "馬術部の手押し車": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382254701902303292"
+  },
+  "馬術部のピッチフォーク": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382254577620881449"
+  },
+  "馬術部のハードル": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382254460411183185"
+  },
+  "馬術部の給水テーブル": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1382254354882367598"
+  },
+  "馬術部の水飲み場": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1382254210799632465"
+  },
+  "馬場の前景（下）②": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1382254065089642537"
+  },
+  "馬場の前景（下）①": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1382253910634266755"
+  },
+  "馬場の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1382253813775204505"
+  },
+  "馬場の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1382253708129337425"
+  },
+  "イデアのボードゲーム（クラブ）": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1376470899380977778"
+  },
+  "イデアのフレーム（クラブ）": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1376470809123749919"
+  },
+  "イデアのショルダーケース（クラブ）": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1376470727519113339"
+  },
+  "クラブ・ウェア（イデア）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1376199198168322209"
+  },
+  "サムの椅子": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1376199129385930903"
+  },
+  "ロマンチストなホタルの像": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1376199059076944084"
+  },
+  "サムのラグ": {
+    "category": "装飾：ラグ",
+    "source": "discord-post",
+    "source_post_id": "1376198974075306135"
+  },
+  "サムの机": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1376198891128623246"
+  },
+  "エタニティ・フロートのボート": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1369306506834743416"
+  },
+  "ウェディングアーチ": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1369306418850562099"
+  },
+  "ボトルシップ": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1368946096209920071"
+  },
+  "群青の街の港の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1366407793355001981"
+  },
+  "群青の街の港の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1366407693262262353"
+  },
+  "フラワーシャワーのワゴン": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1366407605383336008"
+  },
+  "海辺のパラソル": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1366407503172206624"
+  },
+  "渚のセレブレイト（ジェイド）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1365331014972342353"
+  },
+  "海辺のテーブル": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1365330900568641536"
+  },
+  "海辺のチェア": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1365330814526689401"
+  },
+  "ボードゲーム部の椅子": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1362076945151692941"
+  },
+  "ボードゲーム部の棚": {
+    "category": "家具：収納",
+    "source": "discord-post",
+    "source_post_id": "1362076875731632338"
+  },
+  "クラブ・ウェア（アズール）": {
+    "category": "雑貨：衣装",
+    "source": "discord-post",
+    "source_post_id": "1362076777174012127"
+  },
+  "ボードゲーム部の教卓": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1362076693812220105"
+  },
+  "ボードゲーム部の大きい棚": {
+    "category": "家具：収納",
+    "source": "discord-post",
+    "source_post_id": "1362076612824273079"
+  },
+  "ボードゲーム部のディスプレイケース": {
+    "category": "装飾：壁装飾",
+    "source": "discord-post",
+    "source_post_id": "1362076522097414244"
+  },
+  "ボードゲーム部の黒板": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1361715372616847450"
+  },
+  "ボードゲーム部の対戦テーブル": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1361715312285974578"
+  },
+  "ボードゲーム部の前景（上）②": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1361715113438089286"
+  },
+  "ボードゲーム部の前景（上）①": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1361714974539386890"
+  },
+  "ボードゲーム部の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1361714896290447671"
+  },
+  "ボードゲーム部の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1361714805160808688"
+  },
+  "アズールのボードゲーム（クラブ）": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1360247063022931999"
+  },
+  "アズールのフレーム（クラブ）": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1360246951001723203"
+  },
+  "アズールのショルダーケース（クラブ）": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1360246820168663245"
+  },
+  "マレウスのぬいぐるみ": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1356978561264783492"
+  },
+  "ファントムの像(マレウス)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1355097709018873967"
+  },
+  "オーバーブロットのフレーム(マレウス)": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1355097250170404968"
+  },
+  "被服室の床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1352180750891356221"
+  },
+  "被服室の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1352180620528193576"
+  },
+  "グリムのぬいぐるみ（5周年）": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1350467903547244635"
+  },
+  "対ドラゴン用決戦アームズボックス": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1350319274975166476"
+  },
+  "ランタンが浮かぶ夜の海の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1344562713472532501"
+  },
+  "ランタンが浮かぶ夜の海の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1344562406915047494"
+  },
+  "夜を照らすランタン（下）②": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1344562290313134112"
+  },
+  "夜を照らすランタン（下）①": {
+    "category": "内観・外観：前景",
+    "source": "discord-post",
+    "source_post_id": "1344562168825253999"
+  },
+  "木製のボート": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1344562026860646400"
+  },
+  "花のワゴン": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1344561895180468275"
+  },
+  "ランタン": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1342089421750538252"
+  },
+  "アヒルの看板": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1342089290791911426"
+  },
+  "木箱": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1342089165126242396"
+  },
+  "トレイのスイーツ調理台": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1337427869760229428"
+  },
+  "バルガスの机": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1337422308494540862"
+  },
+  "「村の猛者」を称える像": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1337421967736832004"
+  },
+  "バルガスの椅子": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1337421728187551794"
+  },
+  "トレイン ストリクトスーツの写真②": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1329078970062209045"
+  },
+  "トレイン ストリクトスーツの写真①": {
+    "category": "装飾：写真",
+    "source": "discord-post",
+    "source_post_id": "1329078795574972580"
+  },
+  "TAKOAGE": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1324687991678963753"
+  },
+  "迎春の庭の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1323675007729008774"
+  },
+  "東方の石灯籠": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1323671113154433024"
+  },
+  "東方の梅": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1323670648504975391"
+  },
+  "東方の縁台": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1323670480242343996"
+  },
+  "迎春の庭の床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1323669463551447050"
+  },
+  "王子を掲げる呪術師の像": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1319669900352032768"
+  },
+  "ホリデーイルミネーションのプレゼント": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1317313831504187412"
+  },
+  "ホリデーイルミネーションの噴水": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1317313655502798901"
+  },
+  "ホリデーイルミネーションのベンチ": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1317313565933310063"
+  },
+  "ホリデーイルミネーションのアーチ": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1317313401210273852"
+  },
+  "キャンディケインのパーティション": {
+    "category": "装飾：パーティション",
+    "source": "discord-post",
+    "source_post_id": "1317313307023245412"
+  },
+  "オーナメント輝く大きなツリー": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1317312978642800641"
+  },
+  "ホリデーイルミネーションの床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1317312525746049117"
+  },
+  "ホリデーイルミネーションの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1317312443768246324"
+  },
+  "サンセット・ヴィラの床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1317040666928218122"
+  },
+  "サンセット・ヴィラの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1317039330946056246"
+  },
+  "夕焼けの草原の闘技場(デュース)": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1317029838795706378"
+  },
+  "ケイトのトリックステア": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1315618296154030101"
+  },
+  "ラギーのドーナツぎっしりテーブル": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1309448009750413313"
+  },
+  "ガーゴイル研究会の傘立て": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1305457718554918952"
+  },
+  "ガーゴイル研究会の椅子とパラソル": {
+    "category": "家具：椅子",
+    "source": "discord-post",
+    "source_post_id": "1305457359346470943"
+  },
+  "ガーゴイル研究会のストームグラス": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1305456952654168114"
+  },
+  "ガーゴイル研究会の作業台": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1305453640319762453"
+  },
+  "ガーゴイル研究会の机": {
+    "category": "家具：机",
+    "source": "discord-post",
+    "source_post_id": "1305451358526373891"
+  },
+  "マレウスが作成中のガーゴイル": {
+    "category": "雑貨：大型雑貨",
+    "source": "discord-post",
+    "source_post_id": "1305450215221891114"
+  },
+  "マレウスが作ったガーゴイル": {
+    "category": "雑貨：小物雑貨",
+    "source": "discord-post",
+    "source_post_id": "1305449455406813224"
+  }
+}

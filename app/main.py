@@ -13,6 +13,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import mojimoji
 from sync_logic import build_sheet_statuses, extract_furniture_name, parse_sync_command
+from furniture_input.post_parser import parse_post
+from furniture_input.models import Result
+from furniture_input.sheet_writer import build_plan, cell_request
+from furniture_input.sheet_schema import verify_headers
+from furniture_input.service import AutoInputService, target_post
 dotenv.load_dotenv()
 
 logging.basicConfig(
@@ -22,6 +27,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 SCREENSHOT_CHANNEL_ID = 1290587266695036958
+TEST_CHANNEL_ID = 1294952504752082964
 SYNC_CHANNEL_ID = 1297464731841597460
 DONE_EMOJI = "<:done:1290672968732774432>"
 SCREENSHOT_HISTORY_LIMIT = 10000
@@ -66,12 +72,12 @@ def hankaku_to_zenkaku(text):
 
 
 def is_target_screenshot(message):
-    if not 3 <= len(message.attachments) <= 4:
-        return False
-    return any(
-        attachment.filename.lower().endswith(("png", "jpg", "jpeg", "gif"))
-        for attachment in message.attachments
-    )
+    return target_post(message)
+
+
+def message_furniture_key(message):
+    post = parse_post(message.content)
+    return post["key"] if post else extract_furniture_name(message.content)
 
 
 def get_done_reaction(message):
@@ -207,7 +213,7 @@ try:
         for message in messages:
             if not is_target_screenshot(message):
                 continue
-            if extract_furniture_name(message.content) != furniture_name:
+            if message_furniture_key(message) != furniture_name:
                 continue
 
             matched_count += 1
@@ -241,7 +247,7 @@ try:
         ]
         screenshot_messages_by_name = {}
         for message in screenshot_messages:
-            furniture_name = extract_furniture_name(message.content)
+            furniture_name = message_furniture_key(message)
             if furniture_name:
                 screenshot_messages_by_name.setdefault(furniture_name, []).append(message)
 
@@ -319,47 +325,40 @@ try:
         client = gspread.authorize(creds)
         
         # スプレッドシートIDとシート名を指定
-        spreadsheet_id = '1WGAQSg0vKHhmy0T-uWunqXxCuoEinTTi12RrEcStj2o'  # スプレッドシートのID
-        sheet_name = '家具データ入力シート'  # シート名
+        spreadsheet_id = os.getenv('GOOGLE_SPREADSHEET_ID', '1WGAQSg0vKHhmy0T-uWunqXxCuoEinTTi12RrEcStj2o')
+        sheet_name = os.getenv('GOOGLE_WORKSHEET_NAME', '家具データ入力シート')
         sheet = client.open_by_key(spreadsheet_id).worksheet(sheet_name)
         return sheet
 
     # スプレッドシートのC3以下の空いているセルにデータを書き込む
     def write_to_spreadsheet(furniture_name, furniture_type):
         sheet = connect_to_google_sheets()
+        verify_headers(sheet.get("B1:BF2"))
 
-        # C列を取得
-        col_C = sheet.col_values(3)  # C列のすべての値を取得
-        # 同じ文字列が存在しない場合のみ追加
-        if furniture_name in col_C:
-            target_row = col_C.index(furniture_name) + 1
-        else:
-            target_row = len(col_C) + 1
-            sheet.update_cell(target_row, 3, furniture_name)
-        if furniture_type:
-            sheet.update_cell(target_row, 8, furniture_type)
+        post = parse_post(f"{furniture_name}\n{furniture_type}")
+        rows = sheet.get("B3:BF", value_render_option="FORMULA")
+        plan = build_plan(rows, post, Result())
+        if plan.values and rows == sheet.get("B3:BF", value_render_option="FORMULA"):
+            requests = [cell_request(sheet.id, plan.row, c, v) for c, v in plan.values.items()]
+            requests.extend(cell_request(sheet.id, plan.row, c, v, True) for c, v in plan.formula_values.items())
+            if plan.row > sheet.row_count:
+                requests.insert(0, {"appendDimension": {"sheetId": sheet.id, "dimension": "ROWS", "length": plan.row-sheet.row_count}})
+            sheet.spreadsheet.batch_update({"requests": requests})
+
 
 
 
     # メッセージを処理する関数
     def write_spreadsheet(message):
-        # メッセージを行ごとに分割
-        lines = message.content.split('\n')
+        post = parse_post(message.content)
+        if post:
+            write_to_spreadsheet(post["name"], post["category"])
 
-        furniture_name = None
-        furniture_type = None
-
-        for line in lines:
-            line = hankaku_to_zenkaku(line)
-            # 「家具名：」で始まる行を探す
-            if line.startswith("家具名"):
-                furniture_name = line.split("家具名：")[1].strip()  # 「家具名：」の後の文字列を取得
-            for furniture_const in FURNITURE_TYPE_CONST:
-                # 家具種別が存在した場合は設定
-                if line.startswith(furniture_const):
-                    furniture_type = furniture_const
-        if furniture_name:
-            write_to_spreadsheet(furniture_name, furniture_type)
+    auto_channels = {int(value) for value in os.getenv(
+        "FURNITURE_AUTO_INPUT_CHANNEL_IDS", f"{SCREENSHOT_CHANNEL_ID},{TEST_CHANNEL_ID}"
+    ).split(",") if value.strip()}
+    auto_input = AutoInputService(client, connect_to_google_sheets, auto_channels)
+    legacy_write_lock = asyncio.Lock()
 
     @client.event
     async def on_message(message):
@@ -382,18 +381,42 @@ try:
         
 
         # 特定のチャンネルIDのみに反応させる
-        specific_channel_id = (1290587266695036958,1294952504752082964) # 家具スクショチャンネル、テストチャンネル
+        specific_channel_id = (SCREENSHOT_CHANNEL_ID, TEST_CHANNEL_ID) # 家具スクショチャンネル、テストチャンネル
 
-        if message.channel.id not in specific_channel_id:
+        if message.channel.id not in set(specific_channel_id) | auto_channels:
             return  # 指定したチャンネル以外では何もしない
 
         # メッセージが画像付きの場合、家具入力ロジック
         if message.attachments:
             if message.channel.id == SCREENSHOT_CHANNEL_ID and is_target_screenshot(message):
-                furniture_name = extract_furniture_name(message.content)
+                furniture_name = message_furniture_key(message)
                 if furniture_name:
                     screenshot_messages_by_name.setdefault(furniture_name, []).append(message)
-            write_spreadsheet(message)
+            if auto_input.mode == "off":
+                async with legacy_write_lock:
+                    await asyncio.to_thread(write_spreadsheet, message)
+            else:
+                try:
+                    await auto_input.submit(message)
+                except Exception as exc:
+                    # This event ends here; no recovery queue or automatic replay.
+                    logger.warning("Furniture submission failed id=%s error=%s", message.id, type(exc).__name__)
+
+    @client.event
+    async def on_raw_message_edit(payload):
+        if payload.channel_id not in auto_channels or not {"content", "attachments"}.intersection(payload.data):
+            return
+        try:
+            channel = client.get_channel(payload.channel_id) or await client.fetch_channel(payload.channel_id)
+            message = await channel.fetch_message(payload.message_id)
+            for name in list(screenshot_messages_by_name):
+                screenshot_messages_by_name[name] = [m for m in screenshot_messages_by_name[name] if m.id != message.id]
+            if target_post(message) and not message.author.bot:
+                name = message_furniture_key(message)
+                screenshot_messages_by_name.setdefault(name, []).append(message)
+            await auto_input.submit(message)
+        except Exception as exc:
+            logger.warning("Furniture edit failed id=%s error=%s", payload.message_id, type(exc).__name__)
 
 
     server_thread()

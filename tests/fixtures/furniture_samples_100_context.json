@@ -1,0 +1,42 @@
+{
+  "サイセンタンカガクトシの壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1529082837565964348"
+  },
+  "サイセンタンカガクトシの床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1529082963445420042"
+  },
+  "学園の中庭の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1505926739245666424"
+  },
+  "学園の中庭の床": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1505926945907675277"
+  },
+  "地下水道の床": {
+    "category": "内観・外観：床",
+    "source": "manual-image-classification",
+    "source_post_id": "1497082899676135596"
+  },
+  "地下水道の壁": {
+    "category": "内観・外観：壁紙",
+    "source": "manual-image-classification",
+    "source_post_id": "1497083575747477566"
+  },
+  "オンボロ風の壁（6周年）": {
+    "category": "内観・外観：壁紙",
+    "source": "discord-post",
+    "source_post_id": "1484565053972680744"
+  },
+  "オンボロ風の床（6周年）": {
+    "category": "内観・外観：床",
+    "source": "discord-post",
+    "source_post_id": "1484565108221935758"
+  }
+}

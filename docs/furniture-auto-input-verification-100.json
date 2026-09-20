@@ -1,0 +1,2399 @@
+{
+  "engine_version": "furniture-v3",
+  "image_count": 327,
+  "labels_sha256": "6ab3373dd8121780a9ae729aabf8103548ff3bfa757ae2ed0b75a607e9dafc3f",
+  "label_audit": {
+    "sha256": "6ab3373dd8121780a9ae729aabf8103548ff3bfa757ae2ed0b75a607e9dafc3f",
+    "furniture": 100,
+    "images": 327,
+    "expected": 1049,
+    "initial_sha256": "e808e499abf5ab01c3941205b2ac1709716752ac6903f2963c598db48151237c",
+    "audit": [
+      {
+        "case": 99,
+        "field": "O",
+        "before": "スタイリッシュ",
+        "after": "－",
+        "reason": "Both craft/detail screenshots show only Unique; transcription corrected before this furniture prediction was observed. Evaluation process already loaded initial labels; re-score immutable predictions after completion."
+      }
+    ]
+  },
+  "groups": {
+    "既存30家具": {
+      "furniture": 30,
+      "expected": 337,
+      "correct": 336,
+      "incorrect": 0,
+      "missing": 1,
+      "accepted": 336,
+      "complete": 29
+    },
+    "新規・調整対象外70家具": {
+      "furniture": 70,
+      "expected": 712,
+      "correct": 647,
+      "incorrect": 1,
+      "missing": 64,
+      "accepted": 648,
+      "complete": 35
+    },
+    "全100家具": {
+      "furniture": 100,
+      "expected": 1049,
+      "correct": 983,
+      "incorrect": 1,
+      "missing": 65,
+      "accepted": 984,
+      "complete": 64
+    }
+  },
+  "fields": {
+    "D": {
+      "expected": 99,
+      "correct": 87,
+      "missing": 11,
+      "incorrect": 1
+    },
+    "E": {
+      "expected": 99,
+      "correct": 88,
+      "missing": 11
+    },
+    "F": {
+      "expected": 99,
+      "correct": 88,
+      "missing": 11
+    },
+    "G": {
+      "expected": 100,
+      "correct": 100
+    },
+    "I": {
+      "expected": 77,
+      "correct": 73,
+      "missing": 4
+    },
+    "N": {
+      "expected": 100,
+      "correct": 90,
+      "missing": 10
+    },
+    "O": {
+      "expected": 100,
+      "correct": 87,
+      "missing": 13
+    },
+    "P": {
+      "expected": 100,
+      "correct": 95,
+      "missing": 5
+    },
+    "R": {
+      "expected": 92,
+      "correct": 92
+    },
+    "U": {
+      "expected": 56,
+      "correct": 56
+    },
+    "Y": {
+      "expected": 12,
+      "correct": 12
+    },
+    "AG": {
+      "expected": 32,
+      "correct": 32
+    },
+    "AM": {
+      "expected": 23,
+      "correct": 23
+    },
+    "AI": {
+      "expected": 10,
+      "correct": 10
+    },
+    "AC": {
+      "expected": 14,
+      "correct": 14
+    },
+    "AK": {
+      "expected": 19,
+      "correct": 19
+    },
+    "AO": {
+      "expected": 5,
+      "correct": 5
+    },
+    "AE": {
+      "expected": 11,
+      "correct": 11
+    },
+    "AA": {
+      "expected": 1,
+      "correct": 1
+    }
+  },
+  "engine_hashes": {
+    "app\\furniture_input\\__init__.py": "af918fa924b447bb48202f49e8ee7203b2c3abaa8b7320fd52ac73d378f51a38",
+    "app\\furniture_input\\image_loader.py": "428267cd0ab618007e18f8b59a9bf61e3879a6ed7daf360ad4b19b9f52980196",
+    "app\\furniture_input\\models.py": "8b430653f3cc6c3ad2039f1e88035749a70b269f82480eed8be623be73a522fa",
+    "app\\furniture_input\\numeric_ocr.py": "85b4476b6796d77fce3dcf6dcd5cae273b291360170f0751a789e3d4066ef443",
+    "app\\furniture_input\\post_parser.py": "45d9c7b0e26c77fe94ed6f867cf407b4028131a35ce0a41739ffc23ac1840cce",
+    "app\\furniture_input\\recognizer.py": "780d04ae08c11e19f770c7faa782f270d7892d0bba633098cdc5da4b02b572d0",
+    "app\\furniture_input\\service.py": "8ba6e227e119308f1adf388c634151d20cc387e3052edca0685d1f126207e66b",
+    "app\\furniture_input\\sheet_schema.py": "d19ff452870fbaa15efee1184c5698fd236e33ca2d25dc4557199cff81b0cbdf",
+    "app\\furniture_input\\sheet_writer.py": "d15748495d01359a227adb9b8a708f30c7e86c2acc4af6a08015798959847e66",
+    "app\\furniture_input\\store.py": "7067856ee0d45cecd69485e508cb6088f6fcfec19fe97be1986429a73746a985",
+    "app\\furniture_input\\assets\\baseline.png": "c25d22674c903d12530946a604426df31e39da2ca1f75af45fee81e3cef8a5a9",
+    "app\\furniture_input\\assets\\baseline_grim.png": "1c3ef183a1c7bf31ff51c823037c060fef5a9a3bfd035764db7b5e011ac2a4a9",
+    "app\\furniture_input\\assets\\baseline_silver.png": "65d78cdcf5f63b74e045332c26e6ff5869bafdff5f28ca6fcbc9eaee49deef18",
+    "app\\furniture_input\\assets\\craft_anchor.png": "86d05f8317079114a02dacca3c70db8c47014cc7338154cd1698aabe378cde3f",
+    "app\\furniture_input\\assets\\crest_イグニハイド.png": "c6e679489b2aae2ea6e8fbb8e26227184740284a557e2111da420af14a5a0440",
+    "app\\furniture_input\\assets\\crest_オクタヴィネル.png": "6908bcc19b40c0cb8c3c0f510f75d07f99d097e1b79cd39f19e829a327e8353f",
+    "app\\furniture_input\\assets\\crest_サバナクロー.png": "ae2b98bd5a6d4fdf07c28a6895c7c888ddf8e878c6d7759bd81713ef293a7710",
+    "app\\furniture_input\\assets\\crest_スカラビア.png": "61866ee67a865d078cfa34fccefd574708732b17c32cea3304ba3ff7be84cdfb",
+    "app\\furniture_input\\assets\\crest_ディアソムニア.png": "634db0d5dbeefffcec7f8306eecfc1f3f63d8e4050e4bb0f13b152462783fb28",
+    "app\\furniture_input\\assets\\crest_ナイトレイブンカレッジ.png": "a24be2d860ab726f8f67822dfd92b2bbdb081e1e2134f7c9fe1ae830d9e129cd",
+    "app\\furniture_input\\assets\\crest_ハーツラビュル.png": "f91faa45d0e2b5289ccebd2c69eb1e906c9a6f8d289fe0d853d337c6b865f7a7",
+    "app\\furniture_input\\assets\\crest_ポムフィオーレ.png": "88c3907bd584142dd90e8e804f4f3c828ddc00238f43ef6544db49c5b6fb91ff",
+    "app\\furniture_input\\assets\\detail_anchor.png": "8c1b9aacb298965784fd0812185adc1ff885a6b3047a9a35c99ce27319e76962",
+    "app\\furniture_input\\assets\\detail_tab_anchor.png": "72cc73c71198ccc045abaefb59405b5dfb29aee7ee177d3b85cb1bf7cf398625",
+    "app\\furniture_input\\assets\\dorm_なし.png": "0203dd2d79c4f2148e83ee92a26270354c9a736182b3ad54b559045928c2b431",
+    "app\\furniture_input\\assets\\dorm_スカラビア.png": "4c5f8b662b2cdb3da5738c016169c07e7b8a5fa2f069423e57cda388db460453",
+    "app\\furniture_input\\assets\\dorm_ディアソムニア.png": "de91d80b7e4c030bae4f30731355ffa4ac9f40c63959e073a90de0b6d4e4c226",
+    "app\\furniture_input\\assets\\dorm_ナイトレイブンカレッジ.png": "c2b86c0ba141dde5db4aba8bd68d2772d854f19847c1bc5b962e179d37eb40cc",
+    "app\\furniture_input\\assets\\material_布.png": "834d148695e48d6cbfe2e7e64b297a633546f2204f27d2acb57c6f2c2e46581f",
+    "app\\furniture_input\\assets\\material_木.png": "f5f612a28cd5686bbb108d653b94f01ff24c911d7ecbefeefbe0a901a3c266be",
+    "app\\furniture_input\\assets\\material_金属.png": "8301296797597de34f729a1a8fd70215d17949f0d8ea9edc407569254770601d",
+    "app\\furniture_input\\assets\\provenance.json": "d7955491d8e87860eb6efc13d0e49efd4cacf37d5e08fea6cc646c2318521609",
+    "app\\furniture_input\\assets\\rarity_R.png": "aa4cf69f82c40d8f98b33f1d2cb5e4611764d86e6d68ff12b8c27ae0f59adf58",
+    "app\\furniture_input\\assets\\rarity_SR.png": "36cef757ff8a13e23ca029f8fe5ccf205a420e15fae764be53b468481d5e547f",
+    "app\\furniture_input\\assets\\rarity_SSR.png": "8128b41204dc5ff5c3d5dde0a7560ac098e0040ed023e359fe686c89f61abc54",
+    "app\\furniture_input\\assets\\size_1x1.png": "edab8d852a0b78e8a7fac85d05e4e9b1f295a908b01166a61785d392cbe312ca",
+    "app\\furniture_input\\assets\\size_1x1_alt.png": "f947072c48275d4b233eca8535fdb572b113d43430fd194508a8691e28e0309d",
+    "app\\furniture_input\\assets\\size_1x1_silver.png": "f6276a4e2fd527e5318176e7a7040a708d52a51f87792c2b319bddbd38525ed5",
+    "app\\furniture_input\\assets\\size_label.png": "04ddbaa4f09dde6924f4519df20dc0b2185f0b368cecb62282d5bb0a6d33f503",
+    "app\\furniture_input\\assets\\size_multiply.png": "5017fc43b320d83515d5c2f73c5f5ea1ca060dff64640c11d186d7b1c3fc6506",
+    "app\\furniture_input\\assets\\status_anchor.png": "ee5488ec23c0ce078c91f13bd2e461e9f12ef9e06e79ac225fafd9057c34ec43",
+    "app\\furniture_input\\assets\\status_anchor2.png": "b070bcfb897d5f4f55c53066d6d2c7d41f151639d96c39c1b4eb7190e791c259",
+    "app\\furniture_input\\assets\\status_anchor_grim.png": "51d59fb2ecd299161a17cd425969bdad2cb889c08192503e82e795e9231b4376",
+    "app\\furniture_input\\assets\\status_anchor_silver.png": "6f023f50211f2887172daadccaa82e6ac4c6bc1498baab7c128c68b4dfce2002",
+    "app\\furniture_input\\assets\\theme_エレガント.png": "aa3f09568b4135648841d24a5d6e05c3840b1d696823a974d32672102a611bb5",
+    "app\\furniture_input\\assets\\theme_スタイリッシュ.png": "3ed0606547ead143d938be64a0318113118e2fe95b11c9aaed8991a1ca58d74c",
+    "app\\furniture_input\\assets\\theme_ポップ.png": "726176ff8835232a779e209901b702aa8f075437daebf16d91f103912e462ec1",
+    "app\\furniture_input\\assets\\theme_ユニーク.png": "e9f462e6ffde29b21e904b6b587dec4ca294dfe7360906ccea2467feb0eaf9f7",
+    "app\\furniture_input\\assets\\zero.png": "6b551020a00d06a3ca2197917ad03bf7ed6a927472535dfb610b8f53e7e879ec",
+    "app\\furniture_input\\assets\\zero2.png": "b4cfef37ebcd359e16bbb034fcc4bd8650caf7d669489790d59b3941c13c16cc",
+    "app\\furniture_input\\assets\\zero_crewel0.png": "780a13654b1f12bb7c3bf215706a4e867378b704b6643d639fdfdbbb2f7450d5",
+    "app\\furniture_input\\assets\\zero_crewel1.png": "b67762a3081c3a7fe0f8f23f1638164a4ac14b5b7626e8168af1b40309e98679",
+    "app\\furniture_input\\assets\\zero_crewel2.png": "1d73a54d1e9f2edd24b5f49673e53028e8fb664a07ce0467e45c3cf4c96ae1d1",
+    "app\\furniture_input\\assets\\zero_crewel4.png": "7fe86d95e6b7871fbddc5cb54456ba05677815ca8fff11fd7e4f0bc9b40c663c",
+    "app\\furniture_input\\assets\\zero_crewel5.png": "e59f046fa973ed63d8d0a650414691f8ab910a7b8e2cf5e4b673e1331d694d73",
+    "app\\furniture_input\\assets\\zero_grim0.png": "8b2f68474fa08d7c1505871261b359546e63bb244d610627e451670b7d82710f",
+    "app\\furniture_input\\assets\\zero_grim1.png": "dfc2bf3bb79ad2df06dc906a3dcccd35442895453566c23cc1ecd0639baad678",
+    "app\\furniture_input\\assets\\zero_grim2.png": "004bc5ca3c751dcf976710b71746f32ae9362833952bdb1a595bd97764cf425d",
+    "app\\furniture_input\\assets\\zero_grim4.png": "0a331059cf88390c7b45cb81f13f6bb7bb5dfff8a7d8abfc1a44cda7ae25e142",
+    "app\\furniture_input\\assets\\zero_grim5.png": "c04591768099cc6e03f6ad76f7462bbefd1ee07bed6408b6c1876a74ed13c9e5",
+    "app\\furniture_input\\assets\\zero_silver0.png": "72a02d177d2415f87771f8cbcd36b2140ea56e72794beb0647a886897d30c36e",
+    "app\\furniture_input\\assets\\zero_silver1.png": "c21d2c4edc9aad15f5a30c1aafdf3e0ffe0b7e3ec6a5a854ed5ec7e6ea612378",
+    "app\\furniture_input\\assets\\zero_silver2.png": "6a74b7c6a7a924068d903325b75fe6f3693d3fa2a7dd70d81c12f8c9b3de3cb2",
+    "app\\furniture_input\\assets\\zero_silver4.png": "58f7226a33316913b355ed952e48ef314597a02ef320465ac1ef7b475031ea79",
+    "app\\furniture_input\\assets\\zero_silver5.png": "3aac010fb3c0e09a5269f9a0cbece98dd22ec38d24b7ceca0f1c881f7d9960ec",
+    "app\\furniture_input\\assets\\zero_slot2.png": "ff3b6eb3586c16aea7a846bf7186a2dea55ea5015e28ee014f0f3dc60141d2b6",
+    "app\\furniture_input\\assets\\zero_slot4.png": "5d4e19304dfa5877db533d7b8720a55345f28ae4c5f6e404025c918c6f5a0336",
+    "app\\furniture_input\\assets\\zero_slot5.png": "6d24bbcb90f84195d9f0c0ffa464724053b6c07372b011cfe8b48f2a0ca8d2a8",
+    "app\\furniture_input\\assets\\zero_slot6.png": "d4edac05977139b4998c31708bbde8082a308b6863c1ba841d8bd89583148c1b"
+  },
+  "records": [
+    {
+      "name": "グレート・ルック（ジャミル）",
+      "split": "calibration",
+      "seconds": 7.483,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "スカラビア",
+        "I": 1,
+        "R": 30,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "クルーウェルのクローゼット",
+      "split": "calibration",
+      "seconds": 7.844,
+      "accepted": {
+        "G": "SSR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 2,
+        "R": 20,
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "クルーウェルのパーティション",
+      "split": "calibration",
+      "seconds": 0.938,
+      "accepted": {
+        "G": "R",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 40
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 6,
+      "correct_count": 6
+    },
+    {
+      "name": "グリムのツム",
+      "split": "calibration",
+      "seconds": 9.563,
+      "accepted": {
+        "G": "SSR",
+        "N": "ユニーク",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 20,
+        "U": 10000,
+        "AM": 16,
+        "AG": 10,
+        "Y": 15,
+        "D": 99,
+        "E": 0,
+        "F": 42
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "フレンドリーテック（シルバー）",
+      "split": "calibration",
+      "seconds": 13.05,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ディアソムニア",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "クルーウェルの棚",
+      "split": "validation",
+      "seconds": 10.787,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 2,
+        "R": 30,
+        "D": 105,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "リッチファーコート（クルーウェル）",
+      "split": "validation",
+      "seconds": 10.794,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "ポップコーンワゴン（ジャミル）",
+      "split": "validation",
+      "seconds": 10.247,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "O": "エレガント",
+        "P": "スカラビア",
+        "I": 2,
+        "R": 20,
+        "D": 105,
+        "E": 0,
+        "F": 9
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "フレンドリーテック（ジェイド）",
+      "split": "validation",
+      "seconds": 11.561,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "オクタヴィネル",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "フレンドリーテック（ルーク）",
+      "split": "validation",
+      "seconds": 9.259,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ポムフィオーレ",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "フレンドリーテック（カリム）",
+      "split": "validation",
+      "seconds": 10.58,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "スカラビア",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "信号機",
+      "split": "validation_v2",
+      "seconds": 11.428,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 1,
+        "R": 40,
+        "U": 5000,
+        "AI": 2,
+        "AG": 4,
+        "D": 101,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "桜の木",
+      "split": "validation_v2",
+      "seconds": 11.338,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 2,
+        "R": 40,
+        "U": 6000,
+        "AC": 3,
+        "Y": 8,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "フレンドリーテック（ラギー）",
+      "split": "validation_v2",
+      "seconds": 11.118,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "サバナクロー",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 108,
+        "E": 9,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "フレンドリーテック（セベク）",
+      "split": "validation_v2",
+      "seconds": 12.277,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ディアソムニア",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 11,
+        "AG": 5,
+        "D": 108,
+        "E": 9,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "路面電車",
+      "split": "holdout_v2",
+      "seconds": 12.326,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 12,
+        "R": 30,
+        "U": 12000,
+        "AK": 10,
+        "AI": 8,
+        "AG": 10,
+        "Y": 10,
+        "D": 115,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 14,
+      "correct_count": 14
+    },
+    {
+      "name": "赤い提灯",
+      "split": "holdout_v2",
+      "seconds": 15.008,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 3,
+        "R": 30,
+        "U": 8000,
+        "AO": 10,
+        "AK": 4,
+        "Y": 10,
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "大きい猫の看板",
+      "split": "holdout_v2",
+      "seconds": 11.836,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 2,
+        "R": 30,
+        "U": 7000,
+        "AE": 6,
+        "AC": 13,
+        "D": 105,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "大きいネオンの看板",
+      "split": "holdout_v2",
+      "seconds": 12.046,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 4,
+        "R": 30,
+        "U": 9000,
+        "AI": 7,
+        "AG": 7,
+        "AE": 15,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "ラーメンの屋台",
+      "split": "holdout_v2",
+      "seconds": 11.56,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 4,
+        "R": 30,
+        "U": 9000,
+        "AM": 4,
+        "AG": 10,
+        "Y": 15,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "カラオケの看板",
+      "split": "holdout_v3",
+      "seconds": 10.71,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 1,
+        "R": 40,
+        "U": 5000,
+        "AG": 3,
+        "AE": 3,
+        "D": 101,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "若き天才発明家の家のジオラマ",
+      "split": "holdout_v3",
+      "seconds": 11.685,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 4,
+        "R": 30,
+        "U": 9000,
+        "AK": 9,
+        "AI": 6,
+        "Y": 15,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "スーパーヒーローの像",
+      "split": "holdout_v3",
+      "seconds": 12.293,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 4,
+        "R": 30,
+        "U": 9000,
+        "AK": 9,
+        "AG": 20,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "ベイマックスとモチの像",
+      "split": "holdout_v3",
+      "seconds": 12.633,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "I": 4,
+        "R": 20,
+        "U": 8000,
+        "AM": 20,
+        "AK": 8,
+        "AG": 14,
+        "D": 111,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "ツムステのフレーム（夕）②",
+      "split": "validation_v3",
+      "seconds": 9.638,
+      "accepted": {
+        "G": "SSR",
+        "N": "ユニーク",
+        "O": "－",
+        "P": "なし",
+        "R": 2,
+        "U": 20000,
+        "AM": 20,
+        "D": 95,
+        "E": 0,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 10,
+      "correct_count": 10
+    },
+    {
+      "name": "ラ・ボンボニエール（デュース）",
+      "split": "validation_v3",
+      "seconds": 7.34,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "O": "エレガント",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "クラブ・ギア（オルト）",
+      "split": "validation_v3",
+      "seconds": 8.936,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 1,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 8,
+      "correct_count": 8
+    },
+    {
+      "name": "オルトのバッグ（クラブ）",
+      "split": "holdout_v3",
+      "seconds": 9.269,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "イグニハイド",
+        "I": 2,
+        "R": 30,
+        "U": 8000,
+        "AO": 10,
+        "AM": 10,
+        "D": 98,
+        "E": 0,
+        "F": 6
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "オルトのフレーム（クラブ）",
+      "split": "holdout_v3",
+      "seconds": 9.891,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "イグニハイド",
+        "R": 2,
+        "U": 28000,
+        "AM": 18,
+        "AG": 6,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "オルトの撮影機材（クラブ）",
+      "split": "holdout_v3",
+      "seconds": 9.747,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "イグニハイド",
+        "R": 5,
+        "U": 16000,
+        "AG": 30,
+        "AE": 10,
+        "D": 131,
+        "E": 0,
+        "F": 22
+      },
+      "incorrect": {},
+      "missing": [
+        "I"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "サイセンタンカガクトシの壁",
+      "split": "holdout_100",
+      "seconds": 13.723,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "R": 2,
+        "U": 8000,
+        "AK": 8,
+        "AI": 4,
+        "AC": 4
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F"
+      ],
+      "expected_count": 12,
+      "correct_count": 9
+    },
+    {
+      "name": "サイセンタンカガクトシの床",
+      "split": "holdout_100",
+      "seconds": 12.083,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "なし",
+        "R": 2,
+        "U": 8000,
+        "AK": 10,
+        "AC": 6
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F"
+      ],
+      "expected_count": 11,
+      "correct_count": 8
+    },
+    {
+      "name": "ヴィルのバッグ(クラブ)",
+      "split": "holdout_100",
+      "seconds": 9.589,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "ポムフィオーレ",
+        "I": 2,
+        "R": 30,
+        "U": 8000,
+        "AO": 10,
+        "AM": 10,
+        "D": 98,
+        "E": 0,
+        "F": 6
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "ヴィルのフレーム(クラブ)",
+      "split": "holdout_100",
+      "seconds": 10.22,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "ポムフィオーレ",
+        "R": 2,
+        "U": 28000,
+        "AM": 18,
+        "AG": 6,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "ヴィルの撮影機材(クラブ)",
+      "split": "holdout_100",
+      "seconds": 11.191,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "ポムフィオーレ",
+        "R": 5,
+        "U": 16000,
+        "AG": 30,
+        "AE": 10,
+        "D": 131,
+        "E": 0,
+        "F": 22
+      },
+      "incorrect": {},
+      "missing": [
+        "I"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "学園の中庭の壁",
+      "split": "holdout_100",
+      "seconds": 10.48,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 2
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F"
+      ],
+      "expected_count": 8,
+      "correct_count": 5
+    },
+    {
+      "name": "学園の中庭の床",
+      "split": "holdout_100",
+      "seconds": 6.674,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 2
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F"
+      ],
+      "expected_count": 8,
+      "correct_count": 5
+    },
+    {
+      "name": "撮影機材の前景(上)①",
+      "split": "holdout_100",
+      "seconds": 5.152,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 4,
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 8,
+      "correct_count": 8
+    },
+    {
+      "name": "撮影機材の前景(上)②",
+      "split": "holdout_100",
+      "seconds": 5.008,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 4,
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 8,
+      "correct_count": 8
+    },
+    {
+      "name": "映画研究会のカメラ",
+      "split": "holdout_100",
+      "seconds": 4.842,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "D": 105,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "I"
+      ],
+      "expected_count": 8,
+      "correct_count": 7
+    },
+    {
+      "name": "映画研究会の長机",
+      "split": "holdout_100",
+      "seconds": 5.124,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "なし",
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "I"
+      ],
+      "expected_count": 8,
+      "correct_count": 7
+    },
+    {
+      "name": "映画研究会の衣装と小道具",
+      "split": "holdout_100",
+      "seconds": 6.523,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "I": 3
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "P"
+      ],
+      "expected_count": 8,
+      "correct_count": 4
+    },
+    {
+      "name": "映画研究会のドローンカメラ",
+      "split": "holdout_100",
+      "seconds": 6.736,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "I": 1
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "P"
+      ],
+      "expected_count": 8,
+      "correct_count": 4
+    },
+    {
+      "name": "クラブ・ウェア（ヴィル）",
+      "split": "holdout_100",
+      "seconds": 6.962,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "I": 1
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "P"
+      ],
+      "expected_count": 8,
+      "correct_count": 4
+    },
+    {
+      "name": "映画研究会のディレクターズチェア",
+      "split": "holdout_100",
+      "seconds": 6.681,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "I": 1
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "P"
+      ],
+      "expected_count": 8,
+      "correct_count": 4
+    },
+    {
+      "name": "映画研究会の脚立",
+      "split": "holdout_100",
+      "seconds": 6.651,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "I": 1
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "P"
+      ],
+      "expected_count": 8,
+      "correct_count": 4
+    },
+    {
+      "name": "ルチウスの置物",
+      "split": "holdout_100",
+      "seconds": 4.435,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "D": 83,
+        "E": 0,
+        "F": 0
+      },
+      "incorrect": {
+        "D": {
+          "actual": 83,
+          "expected": 89
+        }
+      },
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 7
+    },
+    {
+      "name": "真紅の暴君の像(リドル)",
+      "split": "holdout_100",
+      "seconds": 6.26,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AK": 5,
+        "AG": 11,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "オーバーブロットのフレーム(リドル)",
+      "split": "holdout_100",
+      "seconds": 6.974,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ハーツラビュル",
+        "R": 2,
+        "U": 28000,
+        "AK": 16,
+        "AC": 8,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "ファントムの像(リドル)",
+      "split": "holdout_100",
+      "seconds": 6.414,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "O": "ユニーク",
+        "P": "ハーツラビュル",
+        "I": 9,
+        "R": 20,
+        "U": 20000,
+        "AK": 17,
+        "AI": 8,
+        "AC": 30,
+        "D": 109,
+        "E": 0,
+        "F": 11
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "ネズミ捕り",
+      "split": "holdout_100",
+      "seconds": 6.861,
+      "accepted": {
+        "G": "R",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 15,
+        "R": 10,
+        "U": 8000,
+        "AG": 8,
+        "Y": 7,
+        "D": 116,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "裁縫道具のベッド",
+      "split": "holdout_100",
+      "seconds": 6.592,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 16,
+        "R": 10,
+        "U": 10000,
+        "AM": 12,
+        "AG": 12,
+        "D": 121,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "ビッグ・チェック(エペル)",
+      "split": "holdout_100",
+      "seconds": 6.537,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 10,
+        "AG": 4,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "大きな緑の瓶",
+      "split": "holdout_100",
+      "seconds": 7.095,
+      "accepted": {
+        "G": "R",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 14,
+        "R": 20,
+        "U": 7000,
+        "AK": 5,
+        "AI": 10,
+        "D": 115,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "地下水道の床",
+      "split": "holdout_100",
+      "seconds": 8.049,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 2,
+        "U": 8000,
+        "AK": 4,
+        "AG": 4,
+        "AC": 8
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 8
+    },
+    {
+      "name": "地下水道の壁",
+      "split": "holdout_100",
+      "seconds": 7.724,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 2,
+        "U": 8000,
+        "AK": 4,
+        "AG": 8,
+        "AC": 4
+      },
+      "incorrect": {},
+      "missing": [
+        "D",
+        "E",
+        "F",
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 8
+    },
+    {
+      "name": "地下水道の前景(下)①",
+      "split": "holdout_100",
+      "seconds": 7.469,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 4,
+        "U": 9000,
+        "AI": 14,
+        "AC": 10,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 11,
+      "correct_count": 10
+    },
+    {
+      "name": "地下水道の前景(下)②",
+      "split": "holdout_100",
+      "seconds": 7.306,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "R": 4,
+        "U": 9000,
+        "AI": 14,
+        "AG": 10,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 11,
+      "correct_count": 10
+    },
+    {
+      "name": "ネズミの女王の人形",
+      "split": "holdout_100",
+      "seconds": 6.645,
+      "accepted": {
+        "G": "SR",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 5,
+        "Y": 9,
+        "D": 104,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 12,
+      "correct_count": 11
+    },
+    {
+      "name": "手作りの気球",
+      "split": "holdout_100",
+      "seconds": 6.834,
+      "accepted": {
+        "G": "SSR",
+        "O": "ポップ",
+        "P": "なし",
+        "I": 16,
+        "R": 10,
+        "U": 12000,
+        "AG": 24,
+        "AE": 15,
+        "Y": 15,
+        "D": 128,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "N"
+      ],
+      "expected_count": 13,
+      "correct_count": 12
+    },
+    {
+      "name": "ナイトパーティーのトレイ",
+      "split": "holdout_100",
+      "seconds": 5.445,
+      "accepted": {
+        "G": "R",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 40,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "くつろぎランプ",
+      "split": "holdout_100",
+      "seconds": 5.568,
+      "accepted": {
+        "G": "R",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 40,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "くつろぎテント",
+      "split": "holdout_100",
+      "seconds": 5.8,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 4,
+        "R": 30,
+        "D": 111,
+        "E": 9,
+        "F": 44
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "ジュースクーラー",
+      "split": "holdout_100",
+      "seconds": 5.775,
+      "accepted": {
+        "G": "R",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 40,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "くつろぎソファ",
+      "split": "holdout_100",
+      "seconds": 5.457,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 3,
+        "R": 30,
+        "D": 109,
+        "E": 9,
+        "F": 44
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "くつろぎクッションソファ",
+      "split": "holdout_100",
+      "seconds": 5.576,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "I": 2,
+        "R": 30,
+        "D": 107,
+        "E": 9,
+        "F": 42
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "お菓子のバスケット",
+      "split": "holdout_100",
+      "seconds": 5.562,
+      "accepted": {
+        "G": "R",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 40,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "フラッグガーランドの前景（上）①",
+      "split": "holdout_100",
+      "seconds": 5.855,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "R": 4,
+        "D": 111,
+        "E": 9,
+        "F": 44
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 8,
+      "correct_count": 8
+    },
+    {
+      "name": "フラッグガーランドの前景（上）②",
+      "split": "holdout_100",
+      "seconds": 5.767,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "R": 4,
+        "D": 111,
+        "E": 9,
+        "F": 44
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 8,
+      "correct_count": 8
+    },
+    {
+      "name": "ナイトパーティーのご馳走",
+      "split": "holdout_100",
+      "seconds": 5.463,
+      "accepted": {
+        "G": "SSR",
+        "N": "ポップ",
+        "O": "－",
+        "P": "ナイトレイブンカレッジ",
+        "I": 9,
+        "R": 20,
+        "D": 118,
+        "E": 9,
+        "F": 47
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "グリムのぬいぐるみ（6周年）",
+      "split": "holdout_100",
+      "seconds": 5.572,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 30,
+        "D": 106,
+        "E": 9,
+        "F": 41
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "なりきり花婿（エース）",
+      "split": "holdout_100",
+      "seconds": 5.266,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "なりきり花婿（イデア）",
+      "split": "holdout_100",
+      "seconds": 5.172,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "イグニハイド",
+        "I": 1,
+        "R": 30,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "星送りの衣（デュース）",
+      "split": "holdout_100",
+      "seconds": 5.021,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "ポップ",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "新春の衣（カリム）",
+      "split": "holdout_100",
+      "seconds": 5.087,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "ユニーク",
+        "P": "スカラビア",
+        "I": 1,
+        "R": 30,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "新春の衣（デュース）",
+      "split": "holdout_100",
+      "seconds": 5.083,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "ユニーク",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "D": 99,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "フェアリー・ギア（オルト）",
+      "split": "holdout_100",
+      "seconds": 7.443,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "－",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 10,
+        "AA": 4,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "荒野の反逆者の像(レオナ)",
+      "split": "holdout_100",
+      "seconds": 6.421,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "ユニーク",
+        "P": "サバナクロー",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AK": 5,
+        "AG": 11,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "オーバーブロットのフレーム(レオナ)",
+      "split": "holdout_100",
+      "seconds": 6.877,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "ユニーク",
+        "P": "サバナクロー",
+        "R": 2,
+        "U": 28000,
+        "AK": 16,
+        "AC": 8,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "ファントムの像(レオナ)",
+      "split": "holdout_100",
+      "seconds": 6.029,
+      "accepted": {
+        "G": "SSR",
+        "N": "エレガント",
+        "O": "ユニーク",
+        "P": "サバナクロー",
+        "I": 9,
+        "R": 20,
+        "U": 20000,
+        "AK": 17,
+        "AI": 8,
+        "AC": 30,
+        "D": 109,
+        "E": 0,
+        "F": 11
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "クロウリーの鍵棚",
+      "split": "holdout_100",
+      "seconds": 5.549,
+      "accepted": {
+        "G": "SSR",
+        "N": "スタイリッシュ",
+        "P": "なし",
+        "I": 2,
+        "R": 20,
+        "D": 107,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "クロウリーの棚",
+      "split": "holdout_100",
+      "seconds": 5.508,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "P": "なし",
+        "I": 2,
+        "R": 30,
+        "D": 105,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "レイブンジャケット（クロウリー）",
+      "split": "holdout_100",
+      "seconds": 5.634,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "クロウリーのパーティション",
+      "split": "holdout_100",
+      "seconds": 5.641,
+      "accepted": {
+        "G": "R",
+        "N": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 40,
+        "D": 101,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "オンボロ風の壁（6周年）",
+      "split": "holdout_100",
+      "seconds": 10.818,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "R": 2,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 8,
+      "correct_count": 7
+    },
+    {
+      "name": "オンボロ風の床（6周年）",
+      "split": "holdout_100",
+      "seconds": 12.744,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "R": 2,
+        "D": 101,
+        "E": 9,
+        "F": 39
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 8,
+      "correct_count": 7
+    },
+    {
+      "name": "くつろぎマイルーム（グリム）",
+      "split": "holdout_100",
+      "seconds": 9.779,
+      "accepted": {
+        "G": "SR",
+        "N": "ポップ",
+        "P": "ナイトレイブンカレッジ",
+        "I": 1,
+        "R": 30,
+        "D": 106,
+        "E": 9,
+        "F": 41
+      },
+      "incorrect": {},
+      "missing": [
+        "O"
+      ],
+      "expected_count": 9,
+      "correct_count": 8
+    },
+    {
+      "name": "ラ・ボンボニエール(マレウス)",
+      "split": "holdout_100",
+      "seconds": 6.175,
+      "accepted": {
+        "G": "SR",
+        "N": "スタイリッシュ",
+        "O": "エレガント",
+        "P": "ディアソムニア",
+        "I": 1,
+        "R": 30,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 9,
+      "correct_count": 9
+    },
+    {
+      "name": "新春の衣（イデア）",
+      "split": "holdout_100",
+      "seconds": 9.104,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "イグニハイド",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AM": 12,
+        "AG": 4,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "新春の衣（エペル）",
+      "split": "holdout_100",
+      "seconds": 9.15,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "ポムフィオーレ",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AG": 12,
+        "AE": 4,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "エペルのフレーム（ニューイヤー）",
+      "split": "holdout_100",
+      "seconds": 9.514,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "ポムフィオーレ",
+        "R": 2,
+        "U": 28000,
+        "AO": 16,
+        "Y": 8,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "新春の衣（レオナ）",
+      "split": "holdout_100",
+      "seconds": 8.822,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "サバナクロー",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AM": 12,
+        "AG": 4,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "レオナのフレーム（ニューイヤー）",
+      "split": "holdout_100",
+      "seconds": 9.767,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "サバナクロー",
+        "R": 2,
+        "U": 28000,
+        "AO": 16,
+        "Y": 8,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "新春の衣(エース)",
+      "split": "holdout_100",
+      "seconds": 8.241,
+      "accepted": {
+        "G": "SR",
+        "N": "エレガント",
+        "O": "スタイリッシュ",
+        "P": "ハーツラビュル",
+        "I": 1,
+        "R": 30,
+        "U": 8000,
+        "AM": 12,
+        "AG": 4,
+        "D": 97,
+        "E": 0,
+        "F": 5
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "クリスマス・タウンのクリスマスツリー",
+      "split": "holdout_100",
+      "seconds": 14.079,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 9,
+        "R": 30,
+        "U": 11000,
+        "AE": 5,
+        "AC": 15,
+        "Y": 25,
+        "D": 113,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    },
+    {
+      "name": "ジャック・スケリントンの像",
+      "split": "holdout_100",
+      "seconds": 10.488,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AK": 15,
+        "AE": 23,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "ウギー・ブギーの像",
+      "split": "holdout_100",
+      "seconds": 9.836,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 15,
+        "AE": 23,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 12,
+      "correct_count": 12
+    },
+    {
+      "name": "クリスマス・タウンの前景（下）①",
+      "split": "holdout_100",
+      "seconds": 11.065,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "R": 4,
+        "U": 9000,
+        "AK": 25,
+        "AC": 20,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "クリスマス・タウンの前景（下）②",
+      "split": "holdout_100",
+      "seconds": 10.963,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "スタイリッシュ",
+        "P": "なし",
+        "R": 4,
+        "U": 9000,
+        "AE": 25,
+        "AC": 20,
+        "D": 109,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 11,
+      "correct_count": 11
+    },
+    {
+      "name": "ナイトメアークーリエ（スウィング）",
+      "split": "holdout_100",
+      "seconds": 10.626,
+      "accepted": {
+        "G": "SR",
+        "N": "ユニーク",
+        "O": "－",
+        "P": "なし",
+        "I": 1,
+        "R": 30,
+        "U": 6000,
+        "AM": 20,
+        "AK": 7,
+        "AG": 8,
+        "D": 103,
+        "E": 9,
+        "F": 0
+      },
+      "incorrect": {},
+      "missing": [],
+      "expected_count": 13,
+      "correct_count": 13
+    }
+  ]
+}

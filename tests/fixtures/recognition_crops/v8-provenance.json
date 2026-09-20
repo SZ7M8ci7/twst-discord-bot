@@ -1,0 +1,77 @@
+[
+  {
+    "file": "tests/fixtures/recognition_crops/grey-limited-craft.png",
+    "source_image_id": "1290609893723865161",
+    "source_post_id": "1290609896122748990",
+    "source_sha256": "e8b8e5cbb3597c230cbd63a6a9f62f873eac7f3dd930061ba3ab0a7c3cdc6887",
+    "fixture_sha256": "7f86a29f1af4fefa9fb58955cd5ecc5a19ffc6df5bb8834f172da370d538ada0",
+    "transform": "normalized craft panel at 1x and 2x",
+    "bounds": [
+      167,
+      59,
+      1664,
+      972
+    ],
+    "purpose": "test-only; not a production matching template"
+  },
+  {
+    "file": "tests/fixtures/recognition_crops/grey-limited-craft-hi.png",
+    "source_image_id": "1290609893723865161",
+    "source_post_id": "1290609896122748990",
+    "source_sha256": "e8b8e5cbb3597c230cbd63a6a9f62f873eac7f3dd930061ba3ab0a7c3cdc6887",
+    "fixture_sha256": "63014f66d7bf48f95a8541f75e4e29d57456bf6325ae7fdf6420ed54ea96756b",
+    "transform": "normalized craft panel at 1x and 2x",
+    "bounds": [
+      167,
+      59,
+      1664,
+      972
+    ],
+    "purpose": "test-only; not a production matching template"
+  },
+  {
+    "file": "tests/fixtures/recognition_crops/resampled-pop-primary.png",
+    "source_image_id": "1292842846264496138",
+    "source_post_id": "1292842847652937790",
+    "source_sha256": "0dfb0eb0caf3b7747f42ebb5a89df74e44b9f0acb3ae7321d3443ae16eea3cde",
+    "fixture_sha256": "9a3e3a4548522fee69309fb77dd0da36d7ba59676abfbd6b45340e9324ca8a01",
+    "transform": "normalized detail panel crop 82,395,118,434",
+    "bounds": [
+      162,
+      232,
+      1618,
+      945
+    ],
+    "purpose": "test-only; not a production matching template"
+  },
+  {
+    "file": "tests/fixtures/recognition_crops/resampled-pop-secondary.png",
+    "source_image_id": "1293812318227922994",
+    "source_post_id": "1293812319503126538",
+    "source_sha256": "5569536e765ef32c8a4e4b69fb8695f77389c4ae3b3ef0d3ed50209ad68e7895",
+    "fixture_sha256": "77bc500454de6fb2f741c96631790d5182c9046c2007848d054f35f14783a5d3",
+    "transform": "normalized detail panel crop 219,395,255,434",
+    "bounds": [
+      162,
+      232,
+      1618,
+      945
+    ],
+    "purpose": "test-only; not a production matching template"
+  },
+  {
+    "file": "tests/fixtures/recognition_crops/scratched-status.png",
+    "source_image_id": "1291432313997230080",
+    "source_post_id": "1291432314852741120",
+    "source_sha256": "2c1e8b4366a2749786f3175d3d55bee31ef9c7f7c4750bd4e70139c9a7d10e83",
+    "fixture_sha256": "1f4ebe055e08f749ce084b199fa8f64b78377265c2309dbb789d519e3914c3fc",
+    "transform": "decoded original full screenshot",
+    "bounds": [
+      459,
+      230,
+      1638,
+      836
+    ],
+    "purpose": "test-only; not a production matching template"
+  }
+]
