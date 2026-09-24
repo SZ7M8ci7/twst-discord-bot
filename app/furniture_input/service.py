@@ -16,10 +16,11 @@ def image_attachments(message):
     ]
 
 
-def target_post(message):
+def target_post(message, *, allow_missing_category=False):
     return (
         bool(image_attachments(message))
-        and parse_post(message.content, allow_missing_category=True) is not None
+        and parse_post(message.content, allow_missing_category=allow_missing_category)
+        is not None
     )
 
 
@@ -48,7 +49,7 @@ class AutoInputService:
             self.mode == "off"
             or message.author.bot
             or message.channel.id not in self.channel_ids
-            or not target_post(message)
+            or not target_post(message, allow_missing_category=True)
         ):
             return
         # Serialize live events; images, results and plans belong to this call only.

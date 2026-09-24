@@ -14,7 +14,7 @@ from app.furniture_input.sheet_writer import (
 )
 from app.furniture_input.image_loader import decode, MAX_BYTES
 from app.furniture_input.store import SheetStore
-from app.furniture_input.service import AutoInputService
+from app.furniture_input.service import AutoInputService, target_post
 
 
 def result():
@@ -505,6 +505,7 @@ class ServiceTests(unittest.IsolatedAsyncioTestCase):
     async def test_unknown_categoryless_chatter_never_downloads_or_writes(self):
         service, message, channel, sheet = self.setup_service()
         message.content = "ショップ情報です"
+        self.assertFalse(target_post(message))
         await service.submit(message)
         message.attachments[0].read.assert_not_called()
         service.recognizer.analyze.assert_not_called()
