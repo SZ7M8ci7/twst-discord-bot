@@ -831,7 +831,8 @@ class Recognizer:
         groups = []
         for status in statuses:
             if (
-                not dorm.accepted
+                category is None
+                or not dorm.accepted
                 or not status["comfort"].accepted
                 or status["bonus"] is None
             ):

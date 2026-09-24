@@ -17,7 +17,10 @@ def image_attachments(message):
 
 
 def target_post(message):
-    return bool(image_attachments(message)) and parse_post(message.content) is not None
+    return (
+        bool(image_attachments(message))
+        and parse_post(message.content, allow_missing_category=True) is not None
+    )
 
 
 def revision(message):
@@ -63,12 +66,16 @@ class AutoInputService:
 
     async def process(self, message):
         current_revision = revision(message)
-        post = parse_post(message.content)
+        post = parse_post(message.content, allow_missing_category=True)
         channel = self.client.get_channel(
             message.channel.id
         ) or await self.client.fetch_channel(message.channel.id)
         latest = await channel.fetch_message(message.id)
         if revision(latest) != current_revision:
+            return
+        post, reasons = await asyncio.to_thread(self.store.prepare, post)
+        if post is None:
+            logger.info("Furniture event skipped id=%s reasons=%s", message.id, reasons)
             return
         attachments = image_attachments(message)
         if len(attachments) > 10 or sum(a.size for a in attachments) > 40 * 1024 * 1024:
@@ -92,9 +99,11 @@ class AutoInputService:
             return
         outcome = await asyncio.to_thread(self.store.apply, post, result)
         logger.info(
-            "Furniture event finished id=%s mode=%s state=%s fields=%d",
+            "Furniture event finished id=%s mode=%s state=%s fields=%d reasons=%s",
             message.id,
             self.mode,
             outcome["state"],
             len(outcome["plan"].values),
+            outcome["plan"].reasons
+            + ([outcome["reason"]] if outcome.get("reason") else []),
         )

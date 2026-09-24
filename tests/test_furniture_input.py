@@ -111,8 +111,14 @@ class PlanTests(unittest.TestCase):
         self.assertNotIn("J", plan.values)
 
     def test_all_protected_states(self):
-        for state in ("編集中", "記入済", "公開済", "", "unknown"):
+        for state in ("記入済", "公開済", "", "unknown"):
             self.assertFalse(build_plan([row(state)], POST, result()).values)
+
+    def test_editing_row_fills_blanks_preserving_state_values_and_formulas(self):
+        plan = build_plan([row("編集中", G="R", E=0, J="=SPECIAL(1)")], POST, result())
+        self.assertIn("D", plan.values)
+        self.assertFalse(set("BCEGJ") & plan.values.keys())
+        self.assertFalse(plan.formula_values)
 
     def test_duplicate_name_is_not_first_match(self):
         self.assertFalse(build_plan([row(), row()], POST, result()).values)
@@ -158,14 +164,33 @@ class PlanTests(unittest.TestCase):
             build_plan([row(name="", state="", D=100)], POST, result()).values
         )
 
-    def test_punctuation_variant_held_and_confirmed_alias_resolves(self):
+    def test_unique_punctuation_variant_resolves_without_renaming(self):
         post = parse_post("グレートルック（カリム）\n雑貨：衣装")
-        self.assertFalse(
-            build_plan([row(name="グレート・ルック（カリム）")], post, result()).values
-        )
+        plan = build_plan([row(name="グレート・ルック（カリム）")], post, result())
+        self.assertEqual(plan.row, 3)
+        self.assertIn("G", plan.values)
+        self.assertNotIn("C", plan.values)
         self.assertEqual(
             parse_post("グレートルック(ジャミル)\n雑貨：衣装")["key"], POST["key"]
         )
+
+    def test_ambiguous_variants_are_not_merged(self):
+        post = parse_post("グレートルック（エース）\n雑貨：衣装")
+        rows = [
+            row(name="グレート・ルック（エース）"),
+            row(name="グレート ルック（エース）"),
+        ]
+        self.assertFalse(build_plan(rows, post, result()).values)
+
+    def test_category_omission_requires_existing_identity(self):
+        post = parse_post("グレート・ルック（ジャミル）", allow_missing_category=True)
+        self.assertFalse(build_plan([], post, result()).values)
+        plan = build_plan([row("編集中", H="雑貨：衣装")], post, result())
+        self.assertIn("D", plan.values)
+        self.assertNotIn("H", plan.values)
+        plan = build_plan([row("編集中")], post, result())
+        self.assertIn("G", plan.values)
+        self.assertFalse(set("DEFH") & plan.values.keys())
 
     def test_placeholders_preserve_custom_formulas(self):
         plan = build_plan([row(name="", state="", J="=1")], POST, result())
@@ -299,6 +324,24 @@ def input_store(mode="write", rows=None):
 
 
 class StoreTests(unittest.TestCase):
+    def test_variant_readback_checks_resolved_identity(self):
+        post = parse_post("グレートルック（エース）\n雑貨：衣装")
+        store, sheet = input_store(
+            rows=[
+                row(
+                    "編集中",
+                    name="グレート・ルック（エース）",
+                    J="=1",
+                    K="=1",
+                    L="=1",
+                    M="=1",
+                )
+            ]
+        )
+        self.assertEqual(store.apply(post, result())["state"], "written")
+        self.assertEqual(sheet.data[0][1], "グレート・ルック（エース）")
+        self.assertEqual(sheet.data[0][0], "編集中")
+
     def test_existing_input_sheet_only_without_management_tab(self):
         store, sheet = input_store()
         outcome = store.apply(POST, result())
@@ -448,6 +491,35 @@ class ServiceTests(unittest.IsolatedAsyncioTestCase):
         channel.send.assert_not_called()
         channel.history.assert_not_called()
         self.assertEqual(sheet.data[0][1], POST["name"])
+
+    async def test_missing_category_uses_existing_sheet_category(self):
+        service, message, channel, sheet = self.setup_service()
+        message.content = POST["name"]
+        sheet.data = [row("編集中", H="雑貨：衣装")]
+        await service.submit(message)
+        service.recognizer.analyze.assert_called_once_with(
+            [b"test"], category="雑貨：衣装"
+        )
+        sheet.spreadsheet.batch_update.assert_called_once()
+
+    async def test_unknown_categoryless_chatter_never_downloads_or_writes(self):
+        service, message, channel, sheet = self.setup_service()
+        message.content = "ショップ情報です"
+        await service.submit(message)
+        message.attachments[0].read.assert_not_called()
+        service.recognizer.analyze.assert_not_called()
+        sheet.spreadsheet.batch_update.assert_not_called()
+
+    async def test_known_name_without_category_fills_independent_fields(self):
+        service, message, channel, sheet = self.setup_service()
+        message.content = POST["name"]
+        sheet.data = [row("編集中")]
+        await service.submit(message)
+        service.recognizer.analyze.assert_called_once_with([b"test"], category=None)
+        requests = sheet.spreadsheet.batch_update.call_args.args[0]["requests"]
+        columns = {r["updateCells"]["start"]["columnIndex"] for r in requests}
+        self.assertFalse({3, 4, 5, 7} & columns)
+        self.assertIn(6, columns)
 
     async def test_concurrent_deliveries_do_not_duplicate_row(self):
         service, message, channel, sheet = self.setup_service()

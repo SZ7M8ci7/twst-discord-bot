@@ -1,8 +1,7 @@
 """Pure write planning and narrowly scoped Sheets batch requests."""
 
 from dataclasses import dataclass, field
-import re
-from .post_parser import normalize_name
+from .post_parser import normalize_name, resolve_post
 
 INPUT_COLUMNS = set("CDEFGHINOPRU") | {
     "Y",
@@ -87,6 +86,9 @@ class Plan:
 
 def build_plan(rows, post, result):
     """rows start at row 3 and column B; supplied values use FORMULA rendering."""
+    post, reasons = resolve_post(rows, post)
+    if post is None:
+        return Plan(reasons=reasons)
     matches = [
         i + 3
         for i, r in enumerate(rows)
@@ -99,19 +101,10 @@ def build_plan(rows, post, result):
     if matches:
         plan.row = matches[0]
         existing = rows[plan.row - 3]
-        if not existing or existing[0] != "未入力":
-            plan.reasons.append("未入力以外の行は自動更新しません")
+        if not existing or existing[0] not in {"未入力", "編集中"}:
+            plan.reasons.append("未入力・編集中以外の行は自動更新しません")
             return plan
     else:
-        # Punctuation-only differences are review candidates, not a new duplicate.
-        def compact(value):
-            return re.sub(r"[・･\s]", "", normalize_name(value))
-
-        if any(
-            len(r) > 1 and r[1] and compact(r[1]) == compact(post["name"]) for r in rows
-        ):
-            plan.reasons.append("表記違いの既存名があります。別名辞書で確認が必要です")
-            return plan
         last = max(
             (i + 3 for i, r in enumerate(rows) if len(r) > 1 and r[1]), default=2
         )
@@ -135,8 +128,12 @@ def build_plan(rows, post, result):
         for c, e in result.fields.items()
         if c in INPUT_COLUMNS and e.accepted
     }
-    candidates.update(C=post["name"], H=post["category"])
-    if current["H"] and current["H"] != post["category"]:
+    candidates.update(C=post["name"])
+    if post["category"]:
+        candidates["H"] = post["category"]
+    else:
+        plan.reasons.append("分類不明のため分類と測定値を保留")
+    if current["H"] and post["category"] and current["H"] != post["category"]:
         plan.reasons.append("分類が既存行と異なります")
         return plan
     if current["P"] and candidates.get("P") and current["P"] != candidates["P"]:

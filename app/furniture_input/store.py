@@ -1,6 +1,12 @@
 import threading
-from .post_parser import normalize_name
-from .sheet_writer import build_plan, cell_request, calculated_points, column_index
+from .post_parser import normalize_name, resolve_post
+from .sheet_writer import (
+    Plan,
+    build_plan,
+    cell_request,
+    calculated_points,
+    column_index,
+)
 from .sheet_schema import verify_headers
 
 
@@ -25,13 +31,16 @@ class SheetStore:
         with self.lock:
             self.check_schema()
             before = self.sheet.get("B3:BF", value_render_option="FORMULA")
+            post, reasons = resolve_post(before, post)
+            if post is None:
+                return {"state": "skipped", "plan": Plan(reasons=reasons)}
             plan = build_plan(before, post, result)
             if self.mode == "dry_run":
                 return {"state": "dry_run", "plan": plan}
             if not plan.values:
                 return {"state": "skipped", "plan": plan}
             # Re-resolve by name and compare immediately before writing. Sheets has no CAS;
-            # human editors should mark B=編集中 before editing a row.
+            # Existing values and states are preserved, including 編集中 rows.
             fresh = self.sheet.get("B3:BF", value_render_option="FORMULA")
             if fresh != before:
                 return {
@@ -99,6 +108,12 @@ class SheetStore:
                 "plan": plan,
                 "readback_errors": errors,
             }
+
+    def prepare(self, post):
+        with self.lock:
+            self.check_schema()
+            rows = self.sheet.get("B3:BF", value_render_option="FORMULA")
+            return resolve_post(rows, post)
 
     def verify(self, post, plan):
         with self.lock:

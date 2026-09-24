@@ -577,6 +577,10 @@ class MeasurementContextTests(unittest.TestCase):
             result = self.measurement("内観・外観：床", points)
             self.assertFalse(any(k in result.fields for k in "DEF"))
 
+    def test_unknown_category_never_assumes_nonfloor_baseline(self):
+        result = self.measurement(None, [0] * 7 + [36])
+        self.assertFalse(any(k in result.fields for k in "DEF"))
+
     def test_nrc_keeps_displayed_points_for_sheet_formula(self):
         result = self.measurement(
             "内観・外観：壁紙", [0] * 7 + [39], "ナイトレイブンカレッジ"
